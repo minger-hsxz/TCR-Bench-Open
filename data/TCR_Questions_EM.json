@@ -1,0 +1,3158 @@
+[
+  {
+    "question_id": "Question_G0_Q0",
+    "db_id": "hockey",
+    "highlighted_table": [
+      "TeamsPost_T0"
+    ],
+    "all_tables_in_group": [
+      "TeamsPost_T0",
+      "TeamsPost_T1",
+      "TeamsPost_T2",
+      "TeamsPost_T3"
+    ],
+    "question": "As a sports analyst, could you help me retrieve the points‑per‑game values for all records where the team identifier is \"NYR\" and the bench‑minor rating is exactly 2.0?",
+    "question_template": "Please find the PPG for rows where tmID is NYR and BenchMinor is 2.0.",
+    "answer": [
+      13.0
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "tmID",
+        "BenchMinor"
+      ],
+      "selected_values": {
+        "tmID": "NYR",
+        "BenchMinor": 2.0
+      },
+      "target_column": "PPG",
+      "row_filter_count": 1,
+      "row_indices": [
+        19
+      ],
+      "answer_values": [
+        13.0
+      ],
+      "template_filled": "Please find the PPG for rows where tmID is NYR and BenchMinor is 2.0.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      19
+    ],
+    "question_sentence": "tmID is NYR. BenchMinor is 2.0. PPG is ?"
+  },
+  {
+    "question_id": "Question_G1_Q0",
+    "db_id": "books",
+    "highlighted_table": [
+      "customer_address_T0"
+    ],
+    "all_tables_in_group": [
+      "customer_address_T0",
+      "customer_address_T1",
+      "customer_address_T2",
+      "customer_address_T3"
+    ],
+    "question": "As a customer support representative, could you tell me which customer ID corresponds to the address ID 901?",
+    "question_template": "What is the customer_id when address_id is 901?",
+    "answer": [
+      274,
+      529
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "address_id"
+      ],
+      "selected_values": {
+        "address_id": 901
+      },
+      "target_column": "customer_id",
+      "row_filter_count": 2,
+      "row_indices": [
+        73,
+        128
+      ],
+      "answer_values": [
+        274,
+        529
+      ],
+      "template_filled": "What is the customer_id when address_id is 901?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      73,
+      128
+    ],
+    "question_sentence": "address_id is 901. customer_id is ?"
+  },
+  {
+    "question_id": "Question_G2_Q0",
+    "db_id": "music_platform_2",
+    "highlighted_table": [
+      "podcasts_T0"
+    ],
+    "all_tables_in_group": [
+      "podcasts_T0",
+      "podcasts_T1",
+      "podcasts_T2",
+      "podcasts_T3",
+      "podcasts_T4"
+    ],
+    "question": "As a data analyst working on a podcast directory, could you tell me what the podcast ID is for the show whose iTunes URL is podcasts.apple.com/us/podcast/luanis-podcast/id1521263525 and whose slug is “luanis-podcast”?",
+    "question_template": "What is the podcast_id when itunes_url is https://podcasts.apple.com/us/podcast/luanis-podcast/id1521263525 and slug is luanis-podcast?",
+    "answer": [
+      "a743379a56235b8e5d78256c0b6be033"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "itunes_url",
+        "slug"
+      ],
+      "selected_values": {
+        "itunes_url": "https://podcasts.apple.com/us/podcast/luanis-podcast/id1521263525",
+        "slug": "luanis-podcast"
+      },
+      "target_column": "podcast_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        29
+      ],
+      "answer_values": [
+        "a743379a56235b8e5d78256c0b6be033"
+      ],
+      "template_filled": "What is the podcast_id when itunes_url is https://podcasts.apple.com/us/podcast/luanis-podcast/id1521263525 and slug is luanis-podcast?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      29
+    ],
+    "question_sentence": "itunes_url is https://podcasts.apple.com/us/podcast/luanis-podcast/id1521263525. slug is luanis-podcast. podcast_id is ?"
+  },
+  {
+    "question_id": "Question_G3_Q0",
+    "db_id": "chicago_crime",
+    "highlighted_table": [
+      "Crime_T0"
+    ],
+    "all_tables_in_group": [
+      "Crime_T0",
+      "Crime_T1",
+      "Crime_T2"
+    ],
+    "question": "As a detective reviewing case files, could you tell me the district number for the records where the case number is JB374147 and the beat number is 1,014?",
+    "question_template": "Get the district_no for records satisfying case_number is JB374147 and beat is 1014.",
+    "answer": [
+      10
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "case_number",
+        "beat"
+      ],
+      "selected_values": {
+        "case_number": "JB374147",
+        "beat": 1014
+      },
+      "target_column": "district_no",
+      "row_filter_count": 1,
+      "row_indices": [
+        38
+      ],
+      "answer_values": [
+        10
+      ],
+      "template_filled": "Get the district_no for records satisfying case_number is JB374147 and beat is 1014.",
+      "condition_type": "exact_match"
+    },
+    "template": "Get the {target} for records satisfying {conds}.",
+    "answer_index": [
+      38
+    ],
+    "question_sentence": "case_number is JB374147. beat is 1014. district_no is ?"
+  },
+  {
+    "question_id": "Question_G4_Q0",
+    "db_id": "movies_4",
+    "highlighted_table": [
+      "keyword_T0"
+    ],
+    "all_tables_in_group": [
+      "keyword_T0",
+      "keyword_T1",
+      "keyword_T2",
+      "keyword_T3"
+    ],
+    "question": "As a data analyst, could you help me retrieve the keyword name for the record where the keyword ID is 12366?",
+    "question_template": "Please find the keyword_name for rows where keyword_id is 12366.",
+    "answer": [
+      "hitwoman"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "keyword_id"
+      ],
+      "selected_values": {
+        "keyword_id": 12366
+      },
+      "target_column": "keyword_name",
+      "row_filter_count": 1,
+      "row_indices": [
+        198
+      ],
+      "answer_values": [
+        "hitwoman"
+      ],
+      "template_filled": "Please find the keyword_name for rows where keyword_id is 12366.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      198
+    ],
+    "question_sentence": "keyword_id is 12366. keyword_name is ?"
+  },
+  {
+    "question_id": "Question_G5_Q0",
+    "db_id": "legislator",
+    "highlighted_table": [
+      "current_T0"
+    ],
+    "all_tables_in_group": [
+      "current_T0",
+      "current_T1",
+      "current_T2",
+      "current_T3",
+      "current_T4"
+    ],
+    "question": "As a data analyst working with Wikidata, could you help me retrieve the gender biography information for the entry whose Wikidata identifier is Q973737?",
+    "question_template": "Please find the gender_bio for rows where wikidata_id is Q973737.",
+    "answer": [
+      "M"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "wikidata_id"
+      ],
+      "selected_values": {
+        "wikidata_id": "Q973737"
+      },
+      "target_column": "gender_bio",
+      "row_filter_count": 1,
+      "row_indices": [
+        3
+      ],
+      "answer_values": [
+        "M"
+      ],
+      "template_filled": "Please find the gender_bio for rows where wikidata_id is Q973737.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      3
+    ],
+    "question_sentence": "wikidata_id is Q973737. gender_bio is ?"
+  },
+  {
+    "question_id": "Question_G6_Q0",
+    "db_id": "video_games",
+    "highlighted_table": [
+      "game_platform_T0"
+    ],
+    "all_tables_in_group": [
+      "game_platform_T0",
+      "game_platform_T1",
+      "game_platform_T2",
+      "game_platform_T3",
+      "game_platform_T4"
+    ],
+    "question": "As a game data analyst, could you tell me the platform identifier for the game that was released in 1998 and has a publisher ID of 8486?",
+    "question_template": "What is the platform_id when release_year is 1998 and game_publisher_id is 8486?",
+    "answer": [
+      13
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "release_year",
+        "game_publisher_id"
+      ],
+      "selected_values": {
+        "release_year": 1998,
+        "game_publisher_id": 8486
+      },
+      "target_column": "platform_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        111
+      ],
+      "answer_values": [
+        13
+      ],
+      "template_filled": "What is the platform_id when release_year is 1998 and game_publisher_id is 8486?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      111
+    ],
+    "question_sentence": "release_year is 1998. game_publisher_id is 8486. platform_id is ?"
+  },
+  {
+    "question_id": "Question_G7_Q0",
+    "db_id": "financial",
+    "highlighted_table": [
+      "disp_T0"
+    ],
+    "all_tables_in_group": [
+      "disp_T0",
+      "disp_T1",
+      "disp_T2",
+      "disp_T3"
+    ],
+    "question": "As a data analyst, could you help me retrieve the client identifier for the record where the display ID equals 529?",
+    "question_template": "Show me the client_id where disp_id is 529.",
+    "answer": [
+      529
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "disp_id"
+      ],
+      "selected_values": {
+        "disp_id": 529
+      },
+      "target_column": "client_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        152
+      ],
+      "answer_values": [
+        529
+      ],
+      "template_filled": "Show me the client_id where disp_id is 529.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      152
+    ],
+    "question_sentence": "disp_id is 529. client_id is ?"
+  },
+  {
+    "question_id": "Question_G8_Q0",
+    "db_id": "airline",
+    "highlighted_table": [
+      "Airlines_T0"
+    ],
+    "all_tables_in_group": [
+      "Airlines_T0",
+      "Airlines_T1",
+      "Airlines_T2",
+      "Airlines_T3",
+      "Airlines_T4"
+    ],
+    "question": "As an airline analyst, could you help me find the tail numbers of flights where the scheduled elapsed time is exactly 73?",
+    "question_template": "Show me the TAIL_NUM where CRS_ELAPSED_TIME is 73.",
+    "answer": [
+      "N241LR"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "CRS_ELAPSED_TIME"
+      ],
+      "selected_values": {
+        "CRS_ELAPSED_TIME": 73
+      },
+      "target_column": "TAIL_NUM",
+      "row_filter_count": 1,
+      "row_indices": [
+        2
+      ],
+      "answer_values": [
+        "N241LR"
+      ],
+      "template_filled": "Show me the TAIL_NUM where CRS_ELAPSED_TIME is 73.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      2
+    ],
+    "question_sentence": "CRS_ELAPSED_TIME is 73. TAIL_NUM is ?"
+  },
+  {
+    "question_id": "Question_G9_Q0",
+    "db_id": "student_club",
+    "highlighted_table": [
+      "zip_code_T0"
+    ],
+    "all_tables_in_group": [
+      "zip_code_T0",
+      "zip_code_T1",
+      "zip_code_T2",
+      "zip_code_T3",
+      "zip_code_T4"
+    ],
+    "question": "As a data analyst, could you give me a list of the cities for all entries where the state abbreviation is “OH” and the full state name is Ohio?",
+    "question_template": "List the city for the entries with short_state is OH and state is Ohio.",
+    "answer": [
+      "Reynoldsburg",
+      "Saint Paris"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "short_state",
+        "state"
+      ],
+      "selected_values": {
+        "short_state": "OH",
+        "state": "Ohio"
+      },
+      "target_column": "city",
+      "row_filter_count": 2,
+      "row_indices": [
+        23,
+        121
+      ],
+      "answer_values": [
+        "Reynoldsburg",
+        "Saint Paris"
+      ],
+      "template_filled": "List the city for the entries with short_state is OH and state is Ohio.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      23,
+      121
+    ],
+    "question_sentence": "short_state is OH. state is Ohio. city is ?"
+  },
+  {
+    "question_id": "Question_G10_Q0",
+    "db_id": "cookbook",
+    "highlighted_table": [
+      "Ingredient_T0"
+    ],
+    "all_tables_in_group": [
+      "Ingredient_T0",
+      "Ingredient_T1",
+      "Ingredient_T2"
+    ],
+    "question": "As a home chef planning my pantry, could you tell me the ingredient ID for Frieda's Black Beans that belongs to the dried beans category?",
+    "question_template": "Show me the ingredient_id where name is Frieda's Black Beans and category is dried beans.",
+    "answer": [
+      2498
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "name",
+        "category"
+      ],
+      "selected_values": {
+        "name": "Frieda's Black Beans",
+        "category": "dried beans"
+      },
+      "target_column": "ingredient_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        123
+      ],
+      "answer_values": [
+        2498
+      ],
+      "template_filled": "Show me the ingredient_id where name is Frieda's Black Beans and category is dried beans.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      123
+    ],
+    "question_sentence": "name is Frieda's Black Beans. category is dried beans. ingredient_id is ?"
+  },
+  {
+    "question_id": "Question_G11_Q0",
+    "db_id": "address",
+    "highlighted_table": [
+      "zip_congress_T0"
+    ],
+    "all_tables_in_group": [
+      "zip_congress_T0",
+      "zip_congress_T1",
+      "zip_congress_T2",
+      "zip_congress_T3",
+      "zip_congress_T4"
+    ],
+    "question": "I'm trying to find out which district corresponds to the zip code 28804. Could you help me?",
+    "question_template": "Show me the district where zip_code is 28804.",
+    "answer": [
+      "NC-10"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "zip_code"
+      ],
+      "selected_values": {
+        "zip_code": 28804
+      },
+      "target_column": "district",
+      "row_filter_count": 1,
+      "row_indices": [
+        75
+      ],
+      "answer_values": [
+        "NC-10"
+      ],
+      "template_filled": "Show me the district where zip_code is 28804.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      75
+    ],
+    "question_sentence": "zip_code is 28804. district is ?"
+  },
+  {
+    "question_id": "Question_G12_Q0",
+    "db_id": "talkingdata",
+    "highlighted_table": [
+      "app_labels_T0"
+    ],
+    "all_tables_in_group": [
+      "app_labels_T0",
+      "app_labels_T1",
+      "app_labels_T2"
+    ],
+    "question": "As a data analyst, could you help me retrieve the application IDs for all records where the label identifier is 713?",
+    "question_template": "Please find the app_id for rows where label_id is 713.",
+    "answer": [
+      -999943268489174128,
+      -8103714745209298813,
+      6130399180013669721,
+      -1633853134040899336
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "label_id"
+      ],
+      "selected_values": {
+        "label_id": 713
+      },
+      "target_column": "app_id",
+      "row_filter_count": 4,
+      "row_indices": [
+        48,
+        143,
+        155,
+        228
+      ],
+      "answer_values": [
+        -999943268489174128,
+        -8103714745209298813,
+        6130399180013669721,
+        -1633853134040899336
+      ],
+      "template_filled": "Please find the app_id for rows where label_id is 713.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      48,
+      143,
+      155,
+      228
+    ],
+    "question_sentence": "label_id is 713. app_id is ?"
+  },
+  {
+    "question_id": "Question_G13_Q0",
+    "db_id": "flight_4",
+    "highlighted_table": [
+      "routes_T0"
+    ],
+    "all_tables_in_group": [
+      "routes_T0",
+      "routes_T1",
+      "routes_T2"
+    ],
+    "question": "As a network analyst, could you help me retrieve the source access point for all records where the destination access point ID is 3861?",
+    "question_template": "Get the src_ap for records satisfying dst_apid is 3861.",
+    "answer": [
+      "JFK"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "dst_apid"
+      ],
+      "selected_values": {
+        "dst_apid": 3861
+      },
+      "target_column": "src_ap",
+      "row_filter_count": 1,
+      "row_indices": [
+        94
+      ],
+      "answer_values": [
+        "JFK"
+      ],
+      "template_filled": "Get the src_ap for records satisfying dst_apid is 3861.",
+      "condition_type": "exact_match"
+    },
+    "template": "Get the {target} for records satisfying {conds}.",
+    "answer_index": [
+      94
+    ],
+    "question_sentence": "dst_apid is 3861. src_ap is ?"
+  },
+  {
+    "question_id": "Question_G14_Q0",
+    "db_id": "donor",
+    "highlighted_table": [
+      "projects_T0"
+    ],
+    "all_tables_in_group": [
+      "projects_T0",
+      "projects_T1",
+      "projects_T2",
+      "projects_T3",
+      "projects_T4"
+    ],
+    "question": "As a school administrator, could you provide me with the school IDs for all entries where the primary focus subject is Mathematics?",
+    "question_template": "List the schoolid for the entries with primary_focus_subject is Mathematics.",
+    "answer": [
+      "d510c00a7d934a8f85793106b39eb649",
+      "afdd491ad5831681b7060a9b9264731f",
+      "a7989ae6a7828685032854dfc1632da8"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "primary_focus_subject"
+      ],
+      "selected_values": {
+        "primary_focus_subject": "Mathematics"
+      },
+      "target_column": "schoolid",
+      "row_filter_count": 3,
+      "row_indices": [
+        3,
+        8,
+        12
+      ],
+      "answer_values": [
+        "d510c00a7d934a8f85793106b39eb649",
+        "afdd491ad5831681b7060a9b9264731f",
+        "a7989ae6a7828685032854dfc1632da8"
+      ],
+      "template_filled": "List the schoolid for the entries with primary_focus_subject is Mathematics.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      3,
+      8,
+      12
+    ],
+    "question_sentence": "primary_focus_subject is Mathematics. schoolid is ?"
+  },
+  {
+    "question_id": "Question_G15_Q0",
+    "db_id": "food_inspection_2",
+    "highlighted_table": [
+      "violation_T0"
+    ],
+    "all_tables_in_group": [
+      "violation_T0",
+      "violation_T1",
+      "violation_T2",
+      "violation_T3",
+      "violation_T4"
+    ],
+    "question": "As a health‑safety manager reviewing inspection records, could you tell me which inspection ID corresponds to a case where the inspector’s comment includes the note like “between uses and during storage, ice‑dispensing utensils and ice receptacles must be stored to protect them from contamination; keep the ice‑scoop handle out of the ice in the machine’s bin; and store wiping cloths in sanitizing solution between uses,” the fine amount is $100, and the point identifier is 43?",
+    "question_template": "What is the inspection_id when inspector_comment is Between uses and during storage ice dispensing utensils and ice receptacles shall be stored in a way that protects them from contamination.    KEEP THE ICE SCOOP HANDLE OUT OF THE ICE IN THE BIN OF THE MACHINE.    Store wiping cloths in sanitizing solution between use. and fine is 100 and point_id is 43?",
+    "answer": [
+      120407
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "inspector_comment",
+        "fine",
+        "point_id"
+      ],
+      "selected_values": {
+        "inspector_comment": "Between uses and during storage ice dispensing utensils and ice receptacles shall be stored in a way that protects them from contamination.    KEEP THE ICE SCOOP HANDLE OUT OF THE ICE IN THE BIN OF THE MACHINE.    Store wiping cloths in sanitizing solution between use.",
+        "fine": 100,
+        "point_id": 43
+      },
+      "target_column": "inspection_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        47
+      ],
+      "answer_values": [
+        120407
+      ],
+      "template_filled": "What is the inspection_id when inspector_comment is Between uses and during storage ice dispensing utensils and ice receptacles shall be stored in a way that protects them from contamination.    KEEP THE ICE SCOOP HANDLE OUT OF THE ICE IN THE BIN OF THE MACHINE.    Store wiping cloths in sanitizing solution between use. and fine is 100 and point_id is 43?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      47
+    ],
+    "question_sentence": "inspector_comment is Between uses and during storage ice dispensing utensils and ice receptacles shall be stored in a way that protects them from contamination.    KEEP THE ICE SCOOP HANDLE OUT OF THE ICE IN THE BIN OF THE MACHINE.    Store wiping cloths in sanitizing solution between use.. fine is 100. point_id is 43. inspection_id is ?"
+  },
+  {
+    "question_id": "Question_G16_Q0",
+    "db_id": "superhero",
+    "highlighted_table": [
+      "hero_power_T0"
+    ],
+    "all_tables_in_group": [
+      "hero_power_T0",
+      "hero_power_T1",
+      "hero_power_T2",
+      "hero_power_T3"
+    ],
+    "question": "As a game designer, could you give me a list of the power identifiers for all abilities that belong to the hero whose ID is 101?",
+    "question_template": "List the power_id for the entries with hero_id is 101.",
+    "answer": [
+      9,
+      20,
+      8,
+      60
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "hero_id"
+      ],
+      "selected_values": {
+        "hero_id": 101
+      },
+      "target_column": "power_id",
+      "row_filter_count": 4,
+      "row_indices": [
+        39,
+        64,
+        172,
+        214
+      ],
+      "answer_values": [
+        9,
+        20,
+        8,
+        60
+      ],
+      "template_filled": "List the power_id for the entries with hero_id is 101.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      39,
+      64,
+      172,
+      214
+    ],
+    "question_sentence": "hero_id is 101. power_id is ?"
+  },
+  {
+    "question_id": "Question_G17_Q0",
+    "db_id": "store_1",
+    "highlighted_table": [
+      "tracks_T0"
+    ],
+    "all_tables_in_group": [
+      "tracks_T0",
+      "tracks_T1",
+      "tracks_T2",
+      "tracks_T3",
+      "tracks_T4"
+    ],
+    "question": "As a data analyst reviewing our music catalog, could you help me identify the media type ID for any records where the genre ID is 1 and the file size equals 3,300,654 bytes?",
+    "question_template": "Please find the media_type_id for rows where genre_id is 1 and bytes is 3300654.",
+    "answer": [
+      2
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "genre_id",
+        "bytes"
+      ],
+      "selected_values": {
+        "genre_id": 1,
+        "bytes": 3300654
+      },
+      "target_column": "media_type_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        39
+      ],
+      "answer_values": [
+        2
+      ],
+      "template_filled": "Please find the media_type_id for rows where genre_id is 1 and bytes is 3300654.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      39
+    ],
+    "question_sentence": "genre_id is 1. bytes is 3300654. media_type_id is ?"
+  },
+  {
+    "question_id": "Question_G18_Q0",
+    "db_id": "codebase_community",
+    "highlighted_table": [
+      "tags_T0"
+    ],
+    "all_tables_in_group": [
+      "tags_T0",
+      "tags_T1",
+      "tags_T2",
+      "tags_T3",
+      "tags_T4"
+    ],
+    "question": "As a data analyst, could you help me pull the record IDs for all entries where the count value is exactly 21?",
+    "question_template": "Get the Id for records satisfying Count is 21.",
+    "answer": [
+      1398,
+      459,
+      562,
+      1625
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Count"
+      ],
+      "selected_values": {
+        "Count": 21
+      },
+      "target_column": "Id",
+      "row_filter_count": 4,
+      "row_indices": [
+        21,
+        72,
+        101,
+        130
+      ],
+      "answer_values": [
+        1398,
+        459,
+        562,
+        1625
+      ],
+      "template_filled": "Get the Id for records satisfying Count is 21.",
+      "condition_type": "exact_match"
+    },
+    "template": "Get the {target} for records satisfying {conds}.",
+    "answer_index": [
+      21,
+      72,
+      101,
+      130
+    ],
+    "question_sentence": "Count is 21. Id is ?"
+  },
+  {
+    "question_id": "Question_G19_Q0",
+    "db_id": "bike_1",
+    "highlighted_table": [
+      "trip_T0"
+    ],
+    "all_tables_in_group": [
+      "trip_T0",
+      "trip_T1",
+      "trip_T2",
+      "trip_T3",
+      "trip_T4"
+    ],
+    "question": "As a commuter planning my next ride, could you show me the start dates for trips that begin at station 39?",
+    "question_template": "Show me the start_date where start_station_id is 39.",
+    "answer": [
+      "8/28/2015 12:52",
+      "8/25/2015 12:42"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "start_station_id"
+      ],
+      "selected_values": {
+        "start_station_id": 39
+      },
+      "target_column": "start_date",
+      "row_filter_count": 2,
+      "row_indices": [
+        22,
+        37
+      ],
+      "answer_values": [
+        "8/28/2015 12:52",
+        "8/25/2015 12:42"
+      ],
+      "template_filled": "Show me the start_date where start_station_id is 39.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      22,
+      37
+    ],
+    "question_sentence": "start_station_id is 39. start_date is ?"
+  },
+  {
+    "question_id": "Question_G20_Q0",
+    "db_id": "movies_4",
+    "highlighted_table": [
+      "movie_company_T0"
+    ],
+    "all_tables_in_group": [
+      "movie_company_T0",
+      "movie_company_T1",
+      "movie_company_T2"
+    ],
+    "question": "As a data analyst, could you help me identify the movie IDs that are associated with the company whose ID is 75277?",
+    "question_template": "Which movie_id values correspond to company_id is 75277?",
+    "answer": [
+      301325
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "company_id"
+      ],
+      "selected_values": {
+        "company_id": 75277
+      },
+      "target_column": "movie_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        21
+      ],
+      "answer_values": [
+        301325
+      ],
+      "template_filled": "Which movie_id values correspond to company_id is 75277?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      21
+    ],
+    "question_sentence": "company_id is 75277. movie_id is ?"
+  },
+  {
+    "question_id": "Question_G21_Q0",
+    "db_id": "books",
+    "highlighted_table": [
+      "author_T0"
+    ],
+    "all_tables_in_group": [
+      "author_T0",
+      "author_T1",
+      "author_T2",
+      "author_T3"
+    ],
+    "question": "As a data analyst, could you tell me which author names are associated with the author ID 4719?",
+    "question_template": "Which author_name values correspond to author_id is 4719?",
+    "answer": [
+      "K. Tempest Bradford"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "author_id"
+      ],
+      "selected_values": {
+        "author_id": 4719
+      },
+      "target_column": "author_name",
+      "row_filter_count": 1,
+      "row_indices": [
+        146
+      ],
+      "answer_values": [
+        "K. Tempest Bradford"
+      ],
+      "template_filled": "Which author_name values correspond to author_id is 4719?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      146
+    ],
+    "question_sentence": "author_id is 4719. author_name is ?"
+  },
+  {
+    "question_id": "Question_G22_Q0",
+    "db_id": "professional_basketball",
+    "highlighted_table": [
+      "players_T0"
+    ],
+    "all_tables_in_group": [
+      "players_T0",
+      "players_T1",
+      "players_T2",
+      "players_T3",
+      "players_T4"
+    ],
+    "question": "As a data analyst, could you help me pull the \"collegeOther\" values for any records where the death date is listed as 0000‑00‑00 and the height is exactly 83.0?",
+    "question_template": "List the collegeOther for the entries with deathDate is 0000-00-00 and height is 83.0.",
+    "answer": [
+      "Oregon"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "deathDate",
+        "height"
+      ],
+      "selected_values": {
+        "deathDate": "0000-00-00",
+        "height": 83.0
+      },
+      "target_column": "collegeOther",
+      "row_filter_count": 2,
+      "row_indices": [
+        21,
+        22
+      ],
+      "answer_values": [
+        "Oregon"
+      ],
+      "template_filled": "List the collegeOther for the entries with deathDate is 0000-00-00 and height is 83.0.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      21,
+      22
+    ],
+    "question_sentence": "deathDate is 0000-00-00. height is 83.0. collegeOther is ?"
+  },
+  {
+    "question_id": "Question_G23_Q0",
+    "db_id": "world_development_indicators",
+    "highlighted_table": [
+      "Footnotes_T0"
+    ],
+    "all_tables_in_group": [
+      "Footnotes_T0",
+      "Footnotes_T1",
+      "Footnotes_T2",
+      "Footnotes_T3",
+      "Footnotes_T4"
+    ],
+    "question": "As a financial analyst, could you tell me which years correspond to the records where the series code is “SI.DST.FRST.20” and the description indicates “Income based.”?",
+    "question_template": "List the Year for the entries with Seriescode is SI.DST.FRST.20 and Description is Income based..",
+    "answer": [
+      "YR2004"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Seriescode",
+        "Description"
+      ],
+      "selected_values": {
+        "Seriescode": "SI.DST.FRST.20",
+        "Description": "Income based."
+      },
+      "target_column": "Year",
+      "row_filter_count": 1,
+      "row_indices": [
+        8
+      ],
+      "answer_values": [
+        "YR2004"
+      ],
+      "template_filled": "List the Year for the entries with Seriescode is SI.DST.FRST.20 and Description is Income based..",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      8
+    ],
+    "question_sentence": "Seriescode is SI.DST.FRST.20. Description is Income based.. Year is ?"
+  },
+  {
+    "question_id": "Question_G24_Q0",
+    "db_id": "movielens",
+    "highlighted_table": [
+      "movies2actors_T0"
+    ],
+    "all_tables_in_group": [
+      "movies2actors_T0",
+      "movies2actors_T1",
+      "movies2actors_T2",
+      "movies2actors_T3",
+      "movies2actors_T4"
+    ],
+    "question": "I'm working on a movie database and need to pull the actor IDs for all entries where the movie ID is 2371603. Could you help me with that?",
+    "question_template": "Please find the actorid for rows where movieid is 2371603.",
+    "answer": [
+      2147310
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "movieid"
+      ],
+      "selected_values": {
+        "movieid": 2371603
+      },
+      "target_column": "actorid",
+      "row_filter_count": 1,
+      "row_indices": [
+        3
+      ],
+      "answer_values": [
+        2147310
+      ],
+      "template_filled": "Please find the actorid for rows where movieid is 2371603.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      3
+    ],
+    "question_sentence": "movieid is 2371603. actorid is ?"
+  },
+  {
+    "question_id": "Question_G25_Q0",
+    "db_id": "authors",
+    "highlighted_table": [
+      "Journal_T0"
+    ],
+    "all_tables_in_group": [
+      "Journal_T0",
+      "Journal_T1",
+      "Journal_T2",
+      "Journal_T3"
+    ],
+    "question": "As a data analyst, could you help me retrieve the full name for any records where the abbreviated name is \"J VLSI SIGNAL PROCESS SYST S\"?",
+    "question_template": "Get the FullName for records satisfying ShortName is J VLSI SIGNAL PROCESS SYST S.",
+    "answer": [
+      "Journal of Vlsi Signal Processing Systems for Signal Image and Video Technology"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "ShortName"
+      ],
+      "selected_values": {
+        "ShortName": "J VLSI SIGNAL PROCESS SYST S"
+      },
+      "target_column": "FullName",
+      "row_filter_count": 1,
+      "row_indices": [
+        131
+      ],
+      "answer_values": [
+        "Journal of Vlsi Signal Processing Systems for Signal Image and Video Technology"
+      ],
+      "template_filled": "Get the FullName for records satisfying ShortName is J VLSI SIGNAL PROCESS SYST S.",
+      "condition_type": "exact_match"
+    },
+    "template": "Get the {target} for records satisfying {conds}.",
+    "answer_index": [
+      131
+    ],
+    "question_sentence": "ShortName is J VLSI SIGNAL PROCESS SYST S. FullName is ?"
+  },
+  {
+    "question_id": "Question_G26_Q0",
+    "db_id": "works_cycles",
+    "highlighted_table": [
+      "Product_T0"
+    ],
+    "all_tables_in_group": [
+      "Product_T0",
+      "Product_T1",
+      "Product_T2",
+      "Product_T3"
+    ],
+    "question": "As a production planner, could you help me find the number of days required to manufacture the product identified by the code LJ‑0192‑M?",
+    "question_template": "Please find the DaysToManufacture for rows where ProductNumber is LJ-0192-M.",
+    "answer": [
+      0
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "ProductNumber"
+      ],
+      "selected_values": {
+        "ProductNumber": "LJ-0192-M"
+      },
+      "target_column": "DaysToManufacture",
+      "row_filter_count": 1,
+      "row_indices": [
+        10
+      ],
+      "answer_values": [
+        0
+      ],
+      "template_filled": "Please find the DaysToManufacture for rows where ProductNumber is LJ-0192-M.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      10
+    ],
+    "question_sentence": "ProductNumber is LJ-0192-M. DaysToManufacture is ?"
+  },
+  {
+    "question_id": "Question_G27_Q0",
+    "db_id": "books",
+    "highlighted_table": [
+      "publisher_T0"
+    ],
+    "all_tables_in_group": [
+      "publisher_T0",
+      "publisher_T1",
+      "publisher_T2"
+    ],
+    "question": "As I'm updating our catalog, could you tell me the name of the publisher that has the identifier 1160?",
+    "question_template": "What is the publisher_name when publisher_id is 1160?",
+    "answer": [
+      "Liveright Publishing Corp."
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "publisher_id"
+      ],
+      "selected_values": {
+        "publisher_id": 1160
+      },
+      "target_column": "publisher_name",
+      "row_filter_count": 1,
+      "row_indices": [
+        195
+      ],
+      "answer_values": [
+        "Liveright Publishing Corp."
+      ],
+      "template_filled": "What is the publisher_name when publisher_id is 1160?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      195
+    ],
+    "question_sentence": "publisher_id is 1160. publisher_name is ?"
+  },
+  {
+    "question_id": "Question_G28_Q0",
+    "db_id": "soccer_1",
+    "highlighted_table": [
+      "Team_Attributes_T0"
+    ],
+    "all_tables_in_group": [
+      "Team_Attributes_T0",
+      "Team_Attributes_T1",
+      "Team_Attributes_T2"
+    ],
+    "question": "As a sports analyst reviewing team data, could you help me locate the build‑up play positioning class for the records where the FIFA team identifier is 1819 and the internal team API identifier is 9853?",
+    "question_template": "Please find the buildUpPlayPositioningClass for rows where team_fifa_api_id is 1819 and team_api_id is 9853.",
+    "answer": [
+      "Organised"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "team_fifa_api_id",
+        "team_api_id"
+      ],
+      "selected_values": {
+        "team_fifa_api_id": 1819,
+        "team_api_id": 9853
+      },
+      "target_column": "buildUpPlayPositioningClass",
+      "row_filter_count": 1,
+      "row_indices": [
+        18
+      ],
+      "answer_values": [
+        "Organised"
+      ],
+      "template_filled": "Please find the buildUpPlayPositioningClass for rows where team_fifa_api_id is 1819 and team_api_id is 9853.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      18
+    ],
+    "question_sentence": "team_fifa_api_id is 1819. team_api_id is 9853. buildUpPlayPositioningClass is ?"
+  },
+  {
+    "question_id": "Question_G29_Q0",
+    "db_id": "movie",
+    "highlighted_table": [
+      "actor_T0"
+    ],
+    "all_tables_in_group": [
+      "actor_T0",
+      "actor_T1",
+      "actor_T2"
+    ],
+    "question": "As a casting director, could you let me know the gender associated with the actor whose ID number is 606?",
+    "question_template": "List the Gender for the entries with ActorID is 606.",
+    "answer": [
+      "Male"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "ActorID"
+      ],
+      "selected_values": {
+        "ActorID": 606
+      },
+      "target_column": "Gender",
+      "row_filter_count": 1,
+      "row_indices": [
+        26
+      ],
+      "answer_values": [
+        "Male"
+      ],
+      "template_filled": "List the Gender for the entries with ActorID is 606.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      26
+    ],
+    "question_sentence": "ActorID is 606. Gender is ?"
+  },
+  {
+    "question_id": "Question_G30_Q0",
+    "db_id": "professional_basketball",
+    "highlighted_table": [
+      "series_post_T0"
+    ],
+    "all_tables_in_group": [
+      "series_post_T0",
+      "series_post_T1",
+      "series_post_T2"
+    ],
+    "question": "As a data analyst, could you help me identify the winner IDs (lgIDWinner) that belong to the CFR round in the year 1995 where the L column has a value of 1?",
+    "question_template": "Which lgIDWinner values correspond to round is CFR and year is 1995 and L is 1?",
+    "answer": [
+      "NBA"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "round",
+        "year",
+        "L"
+      ],
+      "selected_values": {
+        "round": "CFR",
+        "year": 1995,
+        "L": 1
+      },
+      "target_column": "lgIDWinner",
+      "row_filter_count": 1,
+      "row_indices": [
+        70
+      ],
+      "answer_values": [
+        "NBA"
+      ],
+      "template_filled": "Which lgIDWinner values correspond to round is CFR and year is 1995 and L is 1?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      70
+    ],
+    "question_sentence": "round is CFR. year is 1995. L is 1. lgIDWinner is ?"
+  },
+  {
+    "question_id": "Question_G31_Q0",
+    "db_id": "beer_factory",
+    "highlighted_table": [
+      "rootbeer_T0"
+    ],
+    "all_tables_in_group": [
+      "rootbeer_T0",
+      "rootbeer_T1",
+      "rootbeer_T2"
+    ],
+    "question": "As a data analyst reviewing our inventory, could you pull the purchase dates for all records where the location ID is 1 and the root beer ID is 105714?",
+    "question_template": "List the PurchaseDate for the entries with LocationID is 1 and RootBeerID is 105714.",
+    "answer": [
+      "2015-03-10"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "LocationID",
+        "RootBeerID"
+      ],
+      "selected_values": {
+        "LocationID": 1,
+        "RootBeerID": 105714
+      },
+      "target_column": "PurchaseDate",
+      "row_filter_count": 1,
+      "row_indices": [
+        135
+      ],
+      "answer_values": [
+        "2015-03-10"
+      ],
+      "template_filled": "List the PurchaseDate for the entries with LocationID is 1 and RootBeerID is 105714.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      135
+    ],
+    "question_sentence": "LocationID is 1. RootBeerID is 105714. PurchaseDate is ?"
+  },
+  {
+    "question_id": "Question_G32_Q0",
+    "db_id": "superhero",
+    "highlighted_table": [
+      "hero_attribute_T0"
+    ],
+    "all_tables_in_group": [
+      "hero_attribute_T0",
+      "hero_attribute_T1",
+      "hero_attribute_T2",
+      "hero_attribute_T3"
+    ],
+    "question": "As a game data analyst, could you give me the attribute values for all entries where the hero ID is 229?",
+    "question_template": "List the attribute_value for the entries with hero_id is 229.",
+    "answer": [
+      75
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "hero_id"
+      ],
+      "selected_values": {
+        "hero_id": 229
+      },
+      "target_column": "attribute_value",
+      "row_filter_count": 1,
+      "row_indices": [
+        206
+      ],
+      "answer_values": [
+        75
+      ],
+      "template_filled": "List the attribute_value for the entries with hero_id is 229.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      206
+    ],
+    "question_sentence": "hero_id is 229. attribute_value is ?"
+  },
+  {
+    "question_id": "Question_G33_Q0",
+    "db_id": "movielens",
+    "highlighted_table": [
+      "actors_T0"
+    ],
+    "all_tables_in_group": [
+      "actors_T0",
+      "actors_T1",
+      "actors_T2",
+      "actors_T3"
+    ],
+    "question": "As a data analyst, could you help me retrieve the gender of the actor whose actor ID is 123,947?",
+    "question_template": "Please find the a_gender for rows where actorid is 123947.",
+    "answer": [
+      "M"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "actorid"
+      ],
+      "selected_values": {
+        "actorid": 123947
+      },
+      "target_column": "a_gender",
+      "row_filter_count": 1,
+      "row_indices": [
+        69
+      ],
+      "answer_values": [
+        "M"
+      ],
+      "template_filled": "Please find the a_gender for rows where actorid is 123947.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      69
+    ],
+    "question_sentence": "actorid is 123947. a_gender is ?"
+  },
+  {
+    "question_id": "Question_G34_Q0",
+    "db_id": "retails",
+    "highlighted_table": [
+      "customer_T3"
+    ],
+    "all_tables_in_group": [
+      "customer_T0",
+      "customer_T1",
+      "customer_T2",
+      "customer_T3",
+      "customer_T4",
+      "customer_T5",
+      "customer_T6"
+    ],
+    "question": "As a data analyst, could you tell me the customer‑key for the record where the customer name is 000105160?",
+    "question_template": "What is the c_custkey when c_name is Customer#000105160?",
+    "answer": [
+      105160
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "c_name"
+      ],
+      "selected_values": {
+        "c_name": "Customer#000105160"
+      },
+      "target_column": "c_custkey",
+      "row_filter_count": 1,
+      "row_indices": [
+        36
+      ],
+      "answer_values": [
+        105160
+      ],
+      "template_filled": "What is the c_custkey when c_name is Customer#000105160?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      36
+    ],
+    "question_sentence": "c_name is Customer#000105160. c_custkey is ?"
+  },
+  {
+    "question_id": "Question_G34_Q1",
+    "db_id": "retails",
+    "highlighted_table": [
+      "customer_T1"
+    ],
+    "all_tables_in_group": [
+      "customer_T0",
+      "customer_T1",
+      "customer_T2",
+      "customer_T3",
+      "customer_T4",
+      "customer_T5",
+      "customer_T6"
+    ],
+    "question": "As a data analyst, could you help me retrieve the customer name for any records where the customer address exactly matches \"W DfSua0pF8oHJz8mVTYdFfVb5CehCOOeD \"?",
+    "question_template": "Please find the c_name for rows where c_address is W DfSua0pF8oHJz8mVTYdFfVb5CehCOOeD .",
+    "answer": [
+      "Customer#000136147"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "c_address"
+      ],
+      "selected_values": {
+        "c_address": "W DfSua0pF8oHJz8mVTYdFfVb5CehCOOeD "
+      },
+      "target_column": "c_name",
+      "row_filter_count": 1,
+      "row_indices": [
+        50
+      ],
+      "answer_values": [
+        "Customer#000136147"
+      ],
+      "template_filled": "Please find the c_name for rows where c_address is W DfSua0pF8oHJz8mVTYdFfVb5CehCOOeD .",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      50
+    ],
+    "question_sentence": "c_address is W DfSua0pF8oHJz8mVTYdFfVb5CehCOOeD . c_name is ?"
+  },
+  {
+    "question_id": "Question_G35_Q0",
+    "db_id": "retails",
+    "highlighted_table": [
+      "orders_T0"
+    ],
+    "all_tables_in_group": [
+      "orders_T0",
+      "orders_T1",
+      "orders_T2",
+      "orders_T3",
+      "orders_T4",
+      "orders_T5"
+    ],
+    "question": "As a sales analyst, could you help me identify the order clerk who handled the orders where the total order price equals 215,540.19?",
+    "question_template": "List the o_clerk for the entries with o_totalprice is 215540.19.",
+    "answer": [
+      "Clerk#000000582"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "o_totalprice"
+      ],
+      "selected_values": {
+        "o_totalprice": 215540.19
+      },
+      "target_column": "o_clerk",
+      "row_filter_count": 1,
+      "row_indices": [
+        57
+      ],
+      "answer_values": [
+        "Clerk#000000582"
+      ],
+      "template_filled": "List the o_clerk for the entries with o_totalprice is 215540.19.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      57
+    ],
+    "question_sentence": "o_totalprice is 215540.19. o_clerk is ?"
+  },
+  {
+    "question_id": "Question_G36_Q0",
+    "db_id": "formula_1",
+    "highlighted_table": [
+      "constructorStandings_T0"
+    ],
+    "all_tables_in_group": [
+      "constructorStandings_T0",
+      "constructorStandings_T1",
+      "constructorStandings_T2",
+      "constructorStandings_T3",
+      "constructorStandings_T4",
+      "constructorStandings_T5",
+      "constructorStandings_T6",
+      "constructorStandings_T7"
+    ],
+    "question": "As a motorsport data analyst, could you help me pull the win counts for entries where the constructor ID is 208, the points total is 0.0, and the position text shows a ninth‑place finish?",
+    "question_template": "Get the wins for records satisfying constructorId is 208 and points is 0.0 and positionText is 9.",
+    "answer": [
+      0
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "constructorId",
+        "points",
+        "positionText"
+      ],
+      "selected_values": {
+        "constructorId": 208,
+        "points": 0.0,
+        "positionText": "9"
+      },
+      "target_column": "wins",
+      "row_filter_count": 1,
+      "row_indices": [
+        28
+      ],
+      "answer_values": [
+        0
+      ],
+      "template_filled": "Get the wins for records satisfying constructorId is 208 and points is 0.0 and positionText is 9.",
+      "condition_type": "exact_match"
+    },
+    "template": "Get the {target} for records satisfying {conds}.",
+    "answer_index": [
+      28
+    ],
+    "question_sentence": "constructorId is 208. points is 0.0. positionText is 9. wins is ?"
+  },
+  {
+    "question_id": "Question_G36_Q1",
+    "db_id": "formula_1",
+    "highlighted_table": [
+      "constructorStandings_T1"
+    ],
+    "all_tables_in_group": [
+      "constructorStandings_T0",
+      "constructorStandings_T1",
+      "constructorStandings_T2",
+      "constructorStandings_T3",
+      "constructorStandings_T4",
+      "constructorStandings_T5",
+      "constructorStandings_T6",
+      "constructorStandings_T7"
+    ],
+    "question": "As a motorsport analyst, could you tell me how many points were awarded to the entries where the constructor standings identifier is 19525 and the position label reads 9?",
+    "question_template": "List the points for the entries with constructorStandingsId is 19525 and positionText is 9.",
+    "answer": [
+      0.0
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "constructorStandingsId",
+        "positionText"
+      ],
+      "selected_values": {
+        "constructorStandingsId": 19525,
+        "positionText": "9"
+      },
+      "target_column": "points",
+      "row_filter_count": 1,
+      "row_indices": [
+        57
+      ],
+      "answer_values": [
+        0.0
+      ],
+      "template_filled": "List the points for the entries with constructorStandingsId is 19525 and positionText is 9.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      57
+    ],
+    "question_sentence": "constructorStandingsId is 19525. positionText is 9. points is ?"
+  },
+  {
+    "question_id": "Question_G37_Q0",
+    "db_id": "movie_3",
+    "highlighted_table": [
+      "inventory_T1"
+    ],
+    "all_tables_in_group": [
+      "inventory_T0",
+      "inventory_T1",
+      "inventory_T2",
+      "inventory_T3",
+      "inventory_T4",
+      "inventory_T5"
+    ],
+    "question": "As a store manager, could you help me identify the inventory IDs that are linked to the film with the ID number 186?",
+    "question_template": "Which inventory_id values correspond to film_id is 186?",
+    "answer": [
+      847
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "film_id"
+      ],
+      "selected_values": {
+        "film_id": 186
+      },
+      "target_column": "inventory_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        67
+      ],
+      "answer_values": [
+        847
+      ],
+      "template_filled": "Which inventory_id values correspond to film_id is 186?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      67
+    ],
+    "question_sentence": "film_id is 186. inventory_id is ?"
+  },
+  {
+    "question_id": "Question_G37_Q1",
+    "db_id": "movie_3",
+    "highlighted_table": [
+      "inventory_T3"
+    ],
+    "all_tables_in_group": [
+      "inventory_T0",
+      "inventory_T1",
+      "inventory_T2",
+      "inventory_T3",
+      "inventory_T4",
+      "inventory_T5"
+    ],
+    "question": "I'm digging through the inventory data and need to pinpoint the store. Could you tell me the store identifier for the inventory record whose inventory ID is 696, the last update timestamp is 2006‑02‑15 05:09:17, and the associated film ID is 152?",
+    "question_template": "What is the store_id when inventory_id is 696 and last_update is 2006-02-15 05:09:17.0 and film_id is 152?",
+    "answer": [
+      1
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "inventory_id",
+        "last_update",
+        "film_id"
+      ],
+      "selected_values": {
+        "inventory_id": 696,
+        "last_update": "2006-02-15 05:09:17.0",
+        "film_id": 152
+      },
+      "target_column": "store_id",
+      "row_filter_count": 1,
+      "row_indices": [
+        122
+      ],
+      "answer_values": [
+        1
+      ],
+      "template_filled": "What is the store_id when inventory_id is 696 and last_update is 2006-02-15 05:09:17.0 and film_id is 152?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      122
+    ],
+    "question_sentence": "inventory_id is 696. last_update is 2006-02-15 05:09:17.0. film_id is 152. store_id is ?"
+  },
+  {
+    "question_id": "Question_G38_Q0",
+    "db_id": "california_schools",
+    "highlighted_table": [
+      "schools_T1"
+    ],
+    "all_tables_in_group": [
+      "schools_T0",
+      "schools_T1",
+      "schools_T2",
+      "schools_T3",
+      "schools_T4",
+      "schools_T5"
+    ],
+    "question": "As a data analyst, could you help me retrieve the charter information for any records where the CDS code is 7617540730655?",
+    "question_template": "Please find the Charter for rows where CDSCode is 7617540730655.",
+    "answer": [
+      0.0
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "CDSCode"
+      ],
+      "selected_values": {
+        "CDSCode": 7617540730655
+      },
+      "target_column": "Charter",
+      "row_filter_count": 1,
+      "row_indices": [
+        8
+      ],
+      "answer_values": [
+        0.0
+      ],
+      "template_filled": "Please find the Charter for rows where CDSCode is 7617540730655.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      8
+    ],
+    "question_sentence": "CDSCode is 7617540730655. Charter is ?"
+  },
+  {
+    "question_id": "Question_G39_Q0",
+    "db_id": "superstore",
+    "highlighted_table": [
+      "south_superstore_T1"
+    ],
+    "all_tables_in_group": [
+      "south_superstore_T0",
+      "south_superstore_T1",
+      "south_superstore_T2",
+      "south_superstore_T3",
+      "south_superstore_T4",
+      "south_superstore_T5",
+      "south_superstore_T6",
+      "south_superstore_T7"
+    ],
+    "question": "As a sales analyst, could you tell me what discount was applied to the order with the ID “US‑2012‑108966”?",
+    "question_template": "List the Discount for the entries with Order ID is US-2012-108966.",
+    "answer": [
+      0.45
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Order ID"
+      ],
+      "selected_values": {
+        "Order ID": "US-2012-108966"
+      },
+      "target_column": "Discount",
+      "row_filter_count": 1,
+      "row_indices": [
+        44
+      ],
+      "answer_values": [
+        0.45
+      ],
+      "template_filled": "List the Discount for the entries with Order ID is US-2012-108966.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      44
+    ],
+    "question_sentence": "Order ID is US-2012-108966. Discount is ?"
+  },
+  {
+    "question_id": "Question_G39_Q1",
+    "db_id": "superstore",
+    "highlighted_table": [
+      "south_superstore_T0"
+    ],
+    "all_tables_in_group": [
+      "south_superstore_T0",
+      "south_superstore_T1",
+      "south_superstore_T2",
+      "south_superstore_T3",
+      "south_superstore_T4",
+      "south_superstore_T5",
+      "south_superstore_T6",
+      "south_superstore_T7"
+    ],
+    "question": "As a sales analyst, could you tell me the order date that corresponds to the order identified by the ID CA-2014-113481?",
+    "question_template": "Which Order Date values correspond to Order ID is CA-2014-113481?",
+    "answer": [
+      "2016-01-03"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Order ID"
+      ],
+      "selected_values": {
+        "Order ID": "CA-2014-113481"
+      },
+      "target_column": "Order Date",
+      "row_filter_count": 1,
+      "row_indices": [
+        9
+      ],
+      "answer_values": [
+        "2016-01-03"
+      ],
+      "template_filled": "Which Order Date values correspond to Order ID is CA-2014-113481?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      9
+    ],
+    "question_sentence": "Order ID is CA-2014-113481. Order Date is ?"
+  },
+  {
+    "question_id": "Question_G39_Q2",
+    "db_id": "superstore",
+    "highlighted_table": [
+      "south_superstore_T2"
+    ],
+    "all_tables_in_group": [
+      "south_superstore_T0",
+      "south_superstore_T1",
+      "south_superstore_T2",
+      "south_superstore_T3",
+      "south_superstore_T4",
+      "south_superstore_T5",
+      "south_superstore_T6",
+      "south_superstore_T7"
+    ],
+    "question": "As a data analyst, could you tell me the quantity for the record that has a row identifier of 10,995?",
+    "question_template": "List the Quantity for the entries with Row ID is 10995.",
+    "answer": [
+      4
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Row ID"
+      ],
+      "selected_values": {
+        "Row ID": 10995
+      },
+      "target_column": "Quantity",
+      "row_filter_count": 1,
+      "row_indices": [
+        21
+      ],
+      "answer_values": [
+        4
+      ],
+      "template_filled": "List the Quantity for the entries with Row ID is 10995.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      21
+    ],
+    "question_sentence": "Row ID is 10995. Quantity is ?"
+  },
+  {
+    "question_id": "Question_G40_Q0",
+    "db_id": "works_cycles",
+    "highlighted_table": [
+      "PurchaseOrderDetail_T2"
+    ],
+    "all_tables_in_group": [
+      "PurchaseOrderDetail_T0",
+      "PurchaseOrderDetail_T1",
+      "PurchaseOrderDetail_T2",
+      "PurchaseOrderDetail_T3",
+      "PurchaseOrderDetail_T4"
+    ],
+    "question": "As an inventory analyst, could you help me locate the product ID for the record where the received quantity equals 550, the purchase order detail identifier is 6434, and the purchase order identifier is 2910?",
+    "question_template": "Get the ProductID for records satisfying ReceivedQty is 550.0 and PurchaseOrderDetailID is 6434 and PurchaseOrderID is 2910.",
+    "answer": [
+      318
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "ReceivedQty",
+        "PurchaseOrderDetailID",
+        "PurchaseOrderID"
+      ],
+      "selected_values": {
+        "ReceivedQty": 550.0,
+        "PurchaseOrderDetailID": 6434,
+        "PurchaseOrderID": 2910
+      },
+      "target_column": "ProductID",
+      "row_filter_count": 1,
+      "row_indices": [
+        40
+      ],
+      "answer_values": [
+        318
+      ],
+      "template_filled": "Get the ProductID for records satisfying ReceivedQty is 550.0 and PurchaseOrderDetailID is 6434 and PurchaseOrderID is 2910.",
+      "condition_type": "exact_match"
+    },
+    "template": "Get the {target} for records satisfying {conds}.",
+    "answer_index": [
+      40
+    ],
+    "question_sentence": "ReceivedQty is 550.0. PurchaseOrderDetailID is 6434. PurchaseOrderID is 2910. ProductID is ?"
+  },
+  {
+    "question_id": "Question_G41_Q0",
+    "db_id": "world_1",
+    "highlighted_table": [
+      "city_T0"
+    ],
+    "all_tables_in_group": [
+      "city_T0",
+      "city_T1",
+      "city_T2",
+      "city_T3",
+      "city_T4"
+    ],
+    "question": "As a data analyst, could you help me find the name associated with the record where the country code is “USA” and the identifier equals 3940?",
+    "question_template": "What is the Name when CountryCode is USA and ID is 3940?",
+    "answer": [
+      "Irvine"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "CountryCode",
+        "ID"
+      ],
+      "selected_values": {
+        "CountryCode": "USA",
+        "ID": 3940
+      },
+      "target_column": "Name",
+      "row_filter_count": 1,
+      "row_indices": [
+        35
+      ],
+      "answer_values": [
+        "Irvine"
+      ],
+      "template_filled": "What is the Name when CountryCode is USA and ID is 3940?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      35
+    ],
+    "question_sentence": "CountryCode is USA. ID is 3940. Name is ?"
+  },
+  {
+    "question_id": "Question_G41_Q1",
+    "db_id": "world_1",
+    "highlighted_table": [
+      "city_T1"
+    ],
+    "all_tables_in_group": [
+      "city_T0",
+      "city_T1",
+      "city_T2",
+      "city_T3",
+      "city_T4"
+    ],
+    "question": "I'm looking at a demographic dataset. Could you tell me the record identifier for the entry where the population is 119,128?",
+    "question_template": "What is the ID when Population is 119128?",
+    "answer": [
+      3979
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Population"
+      ],
+      "selected_values": {
+        "Population": 119128
+      },
+      "target_column": "ID",
+      "row_filter_count": 1,
+      "row_indices": [
+        5
+      ],
+      "answer_values": [
+        3979
+      ],
+      "template_filled": "What is the ID when Population is 119128?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      5
+    ],
+    "question_sentence": "Population is 119128. ID is ?"
+  },
+  {
+    "question_id": "Question_G42_Q0",
+    "db_id": "public_review_platform",
+    "highlighted_table": [
+      "Business_Hours_T0"
+    ],
+    "all_tables_in_group": [
+      "Business_Hours_T0",
+      "Business_Hours_T1",
+      "Business_Hours_T2",
+      "Business_Hours_T3",
+      "Business_Hours_T4",
+      "Business_Hours_T5"
+    ],
+    "question": "As a data analyst, could you help me retrieve the closing time for the business with the ID number 13699?",
+    "question_template": "Show me the closing_time where business_id is 13699.",
+    "answer": [
+      "5PM"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "business_id"
+      ],
+      "selected_values": {
+        "business_id": 13699
+      },
+      "target_column": "closing_time",
+      "row_filter_count": 1,
+      "row_indices": [
+        46
+      ],
+      "answer_values": [
+        "5PM"
+      ],
+      "template_filled": "Show me the closing_time where business_id is 13699.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      46
+    ],
+    "question_sentence": "business_id is 13699. closing_time is ?"
+  },
+  {
+    "question_id": "Question_G43_Q0",
+    "db_id": "music_tracker",
+    "highlighted_table": [
+      "torrents_T2"
+    ],
+    "all_tables_in_group": [
+      "torrents_T0",
+      "torrents_T1",
+      "torrents_T2",
+      "torrents_T3",
+      "torrents_T4"
+    ],
+    "question": "As a music data analyst, could you tell me the total number of snatches for all entries where the artist is $waggot?",
+    "question_template": "List the totalSnatched for the entries with artist is $waggot.",
+    "answer": [
+      30
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "artist"
+      ],
+      "selected_values": {
+        "artist": "$waggot"
+      },
+      "target_column": "totalSnatched",
+      "row_filter_count": 1,
+      "row_indices": [
+        66
+      ],
+      "answer_values": [
+        30
+      ],
+      "template_filled": "List the totalSnatched for the entries with artist is $waggot.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      66
+    ],
+    "question_sentence": "artist is $waggot. totalSnatched is ?"
+  },
+  {
+    "question_id": "Question_G43_Q1",
+    "db_id": "music_tracker",
+    "highlighted_table": [
+      "torrents_T1"
+    ],
+    "all_tables_in_group": [
+      "torrents_T0",
+      "torrents_T1",
+      "torrents_T2",
+      "torrents_T3",
+      "torrents_T4"
+    ],
+    "question": "As a music data analyst, could you help me identify the artist values that match a group name of “The Fresh Start,” an ID of 49856, and a total snatched count of 7?",
+    "question_template": "Which artist values correspond to groupName is the fresh start and id is 49856 and totalSnatched is 7?",
+    "answer": [
+      "shelton harris & tyler dopps"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "groupName",
+        "id",
+        "totalSnatched"
+      ],
+      "selected_values": {
+        "groupName": "the fresh start",
+        "id": 49856,
+        "totalSnatched": 7
+      },
+      "target_column": "artist",
+      "row_filter_count": 1,
+      "row_indices": [
+        88
+      ],
+      "answer_values": [
+        "shelton harris & tyler dopps"
+      ],
+      "template_filled": "Which artist values correspond to groupName is the fresh start and id is 49856 and totalSnatched is 7?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      88
+    ],
+    "question_sentence": "groupName is the fresh start. id is 49856. totalSnatched is 7. artist is ?"
+  },
+  {
+    "question_id": "Question_G44_Q0",
+    "db_id": "software_company",
+    "highlighted_table": [
+      "mailings3_T1"
+    ],
+    "all_tables_in_group": [
+      "mailings3_T0",
+      "mailings3_T1",
+      "mailings3_T2",
+      "mailings3_T3",
+      "mailings3_T4"
+    ],
+    "question": "As a data analyst, could you tell me the reference date associated with the record whose reference ID is 357450?",
+    "question_template": "Show me the REF_DATE where REFID is 357450.",
+    "answer": [
+      "2007-07-01 12:00:00.0"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "REFID"
+      ],
+      "selected_values": {
+        "REFID": 357450
+      },
+      "target_column": "REF_DATE",
+      "row_filter_count": 1,
+      "row_indices": [
+        161
+      ],
+      "answer_values": [
+        "2007-07-01 12:00:00.0"
+      ],
+      "template_filled": "Show me the REF_DATE where REFID is 357450.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      161
+    ],
+    "question_sentence": "REFID is 357450. REF_DATE is ?"
+  },
+  {
+    "question_id": "Question_G45_Q0",
+    "db_id": "debit_card_specializing",
+    "highlighted_table": [
+      "gasstations_T2"
+    ],
+    "all_tables_in_group": [
+      "gasstations_T0",
+      "gasstations_T1",
+      "gasstations_T2",
+      "gasstations_T3",
+      "gasstations_T4",
+      "gasstations_T5",
+      "gasstations_T6"
+    ],
+    "question": "As a logistics analyst, could you tell me the chain identifier for the gas station whose ID is 3893 and that is located in the Czech Republic?",
+    "question_template": "Show me the ChainID where GasStationID is 3893 and Country is CZE.",
+    "answer": [
+      2
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "GasStationID",
+        "Country"
+      ],
+      "selected_values": {
+        "GasStationID": 3893,
+        "Country": "CZE"
+      },
+      "target_column": "ChainID",
+      "row_filter_count": 1,
+      "row_indices": [
+        62
+      ],
+      "answer_values": [
+        2
+      ],
+      "template_filled": "Show me the ChainID where GasStationID is 3893 and Country is CZE.",
+      "condition_type": "exact_match"
+    },
+    "template": "Show me the {target} where {conds}.",
+    "answer_index": [
+      62
+    ],
+    "question_sentence": "GasStationID is 3893. Country is CZE. ChainID is ?"
+  },
+  {
+    "question_id": "Question_G46_Q0",
+    "db_id": "mondial_geo",
+    "highlighted_table": [
+      "province_T1"
+    ],
+    "all_tables_in_group": [
+      "province_T0",
+      "province_T1",
+      "province_T2",
+      "province_T3",
+      "province_T4",
+      "province_T5",
+      "province_T6",
+      "province_T7"
+    ],
+    "question": "As a data analyst, I'm trying to find all the names that are associated with the capital province listed as Vaasa. Could you tell me which name entries correspond to it?",
+    "question_template": "Which Name values correspond to CapProv is Vaasa?",
+    "answer": [
+      "Vaasa"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "CapProv"
+      ],
+      "selected_values": {
+        "CapProv": "Vaasa"
+      },
+      "target_column": "Name",
+      "row_filter_count": 1,
+      "row_indices": [
+        46
+      ],
+      "answer_values": [
+        "Vaasa"
+      ],
+      "template_filled": "Which Name values correspond to CapProv is Vaasa?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      46
+    ],
+    "question_sentence": "CapProv is Vaasa. Name is ?"
+  },
+  {
+    "question_id": "Question_G47_Q0",
+    "db_id": "works_cycles",
+    "highlighted_table": [
+      "SalesOrderHeader_T0"
+    ],
+    "all_tables_in_group": [
+      "SalesOrderHeader_T0",
+      "SalesOrderHeader_T1",
+      "SalesOrderHeader_T2",
+      "SalesOrderHeader_T3",
+      "SalesOrderHeader_T4",
+      "SalesOrderHeader_T5",
+      "SalesOrderHeader_T6"
+    ],
+    "question": "As a logistics analyst, could you help me pull the shipping address identifier for all records where the freight charge is exactly 1.057?",
+    "question_template": "Please find the ShipToAddressID for rows where Freight is 1.057.",
+    "answer": [
+      19475
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Freight"
+      ],
+      "selected_values": {
+        "Freight": 1.057
+      },
+      "target_column": "ShipToAddressID",
+      "row_filter_count": 1,
+      "row_indices": [
+        7
+      ],
+      "answer_values": [
+        19475
+      ],
+      "template_filled": "Please find the ShipToAddressID for rows where Freight is 1.057.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      7
+    ],
+    "question_sentence": "Freight is 1.057. ShipToAddressID is ?"
+  },
+  {
+    "question_id": "Question_G47_Q1",
+    "db_id": "works_cycles",
+    "highlighted_table": [
+      "SalesOrderHeader_T3"
+    ],
+    "all_tables_in_group": [
+      "SalesOrderHeader_T0",
+      "SalesOrderHeader_T1",
+      "SalesOrderHeader_T2",
+      "SalesOrderHeader_T3",
+      "SalesOrderHeader_T4",
+      "SalesOrderHeader_T5",
+      "SalesOrderHeader_T6"
+    ],
+    "question": "As a logistics coordinator, could you help me retrieve the freight amounts for all records where the Bill‑to address identifier is 24880?",
+    "question_template": "List the Freight for the entries with BillToAddressID is 24880.",
+    "answer": [
+      51.7855
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "BillToAddressID"
+      ],
+      "selected_values": {
+        "BillToAddressID": 24880
+      },
+      "target_column": "Freight",
+      "row_filter_count": 1,
+      "row_indices": [
+        22
+      ],
+      "answer_values": [
+        51.7855
+      ],
+      "template_filled": "List the Freight for the entries with BillToAddressID is 24880.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      22
+    ],
+    "question_sentence": "BillToAddressID is 24880. Freight is ?"
+  },
+  {
+    "question_id": "Question_G48_Q0",
+    "db_id": "wta_1",
+    "highlighted_table": [
+      "matches_T1"
+    ],
+    "all_tables_in_group": [
+      "matches_T0",
+      "matches_T1",
+      "matches_T2",
+      "matches_T3",
+      "matches_T4"
+    ],
+    "question": "As a sports data analyst, could you tell me the IOC country code that corresponds to the winner with the identifier 201366?",
+    "question_template": "What is the winner_ioc when winner_id is 201366?",
+    "answer": [
+      "CZE"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "winner_id"
+      ],
+      "selected_values": {
+        "winner_id": 201366
+      },
+      "target_column": "winner_ioc",
+      "row_filter_count": 1,
+      "row_indices": [
+        26
+      ],
+      "answer_values": [
+        "CZE"
+      ],
+      "template_filled": "What is the winner_ioc when winner_id is 201366?",
+      "condition_type": "exact_match"
+    },
+    "template": "What is the {target} when {conds}?",
+    "answer_index": [
+      26
+    ],
+    "question_sentence": "winner_id is 201366. winner_ioc is ?"
+  },
+  {
+    "question_id": "Question_G48_Q1",
+    "db_id": "wta_1",
+    "highlighted_table": [
+      "matches_T0"
+    ],
+    "all_tables_in_group": [
+      "matches_T0",
+      "matches_T1",
+      "matches_T2",
+      "matches_T3",
+      "matches_T4"
+    ],
+    "question": "As a data analyst, could you help me pull the loser’s rank points for the records where the match number equals 218 and the winner’s rank is 8?",
+    "question_template": "Please find the loser_rank_points for rows where match_num is 218 and winner_rank is 8.",
+    "answer": [
+      2780
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "match_num",
+        "winner_rank"
+      ],
+      "selected_values": {
+        "match_num": 218,
+        "winner_rank": 8
+      },
+      "target_column": "loser_rank_points",
+      "row_filter_count": 1,
+      "row_indices": [
+        10
+      ],
+      "answer_values": [
+        2780
+      ],
+      "template_filled": "Please find the loser_rank_points for rows where match_num is 218 and winner_rank is 8.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      10
+    ],
+    "question_sentence": "match_num is 218. winner_rank is 8. loser_rank_points is ?"
+  },
+  {
+    "question_id": "Question_G49_Q0",
+    "db_id": "movie_3",
+    "highlighted_table": [
+      "film_text_T0"
+    ],
+    "all_tables_in_group": [
+      "film_text_T0",
+      "film_text_T1",
+      "film_text_T2",
+      "film_text_T3",
+      "film_text_T4",
+      "film_text_T5"
+    ],
+    "question": "As a film buff, could you tell me the title of the movie whose film identifier is 775?",
+    "question_template": "List the title for the entries with film_id is 775.",
+    "answer": [
+      "SEATTLE EXPECATIONS"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "film_id"
+      ],
+      "selected_values": {
+        "film_id": 775
+      },
+      "target_column": "title",
+      "row_filter_count": 1,
+      "row_indices": [
+        51
+      ],
+      "answer_values": [
+        "SEATTLE EXPECATIONS"
+      ],
+      "template_filled": "List the title for the entries with film_id is 775.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      51
+    ],
+    "question_sentence": "film_id is 775. title is ?"
+  },
+  {
+    "question_id": "Question_G49_Q1",
+    "db_id": "movie_3",
+    "highlighted_table": [
+      "film_text_T2"
+    ],
+    "all_tables_in_group": [
+      "film_text_T0",
+      "film_text_T1",
+      "film_text_T2",
+      "film_text_T3",
+      "film_text_T4",
+      "film_text_T5"
+    ],
+    "question": "As a film archivist, could you help me retrieve the description for the entry whose title is “Fidelity Devil” and whose film identifier is 313?",
+    "question_template": "List the description for the entries with title is FIDELITY DEVIL and film_id is 313.",
+    "answer": [
+      "A Awe-Inspiring Drama of a Technical Writer And a Composer who must Reach a Pastry Chef in A U-Boat"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "title",
+        "film_id"
+      ],
+      "selected_values": {
+        "title": "FIDELITY DEVIL",
+        "film_id": 313
+      },
+      "target_column": "description",
+      "row_filter_count": 1,
+      "row_indices": [
+        89
+      ],
+      "answer_values": [
+        "A Awe-Inspiring Drama of a Technical Writer And a Composer who must Reach a Pastry Chef in A U-Boat"
+      ],
+      "template_filled": "List the description for the entries with title is FIDELITY DEVIL and film_id is 313.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      89
+    ],
+    "question_sentence": "title is FIDELITY DEVIL. film_id is 313. description is ?"
+  },
+  {
+    "question_id": "Question_G49_Q2",
+    "db_id": "movie_3",
+    "highlighted_table": [
+      "film_text_T1"
+    ],
+    "all_tables_in_group": [
+      "film_text_T0",
+      "film_text_T1",
+      "film_text_T2",
+      "film_text_T3",
+      "film_text_T4",
+      "film_text_T5"
+    ],
+    "question": "As a film archivist, could you help me find the movie title for the entry whose description reads “A Astounding Saga of a Dog And a Squirrel who must Conquer a Dog in An Abandoned Fun House” and whose film ID is 470?",
+    "question_template": "List the title for the entries with description is A Astounding Saga of a Dog And a Squirrel who must Conquer a Dog in An Abandoned Fun House and film_id is 470.",
+    "answer": [
+      "ISHTAR ROCKETEER"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "description",
+        "film_id"
+      ],
+      "selected_values": {
+        "description": "A Astounding Saga of a Dog And a Squirrel who must Conquer a Dog in An Abandoned Fun House",
+        "film_id": 470
+      },
+      "target_column": "title",
+      "row_filter_count": 1,
+      "row_indices": [
+        8
+      ],
+      "answer_values": [
+        "ISHTAR ROCKETEER"
+      ],
+      "template_filled": "List the title for the entries with description is A Astounding Saga of a Dog And a Squirrel who must Conquer a Dog in An Abandoned Fun House and film_id is 470.",
+      "condition_type": "exact_match"
+    },
+    "template": "List the {target} for the entries with {conds}.",
+    "answer_index": [
+      8
+    ],
+    "question_sentence": "description is A Astounding Saga of a Dog And a Squirrel who must Conquer a Dog in An Abandoned Fun House. film_id is 470. title is ?"
+  },
+  {
+    "question_id": "Question_G50_Q0",
+    "db_id": "olympics",
+    "highlighted_table": [
+      "games_competitor_T0"
+    ],
+    "all_tables_in_group": [
+      "games_competitor_T0",
+      "games_competitor_T1",
+      "games_competitor_T2",
+      "games_competitor_T3",
+      "games_competitor_T4",
+      "games_competitor_T5"
+    ],
+    "question": "As a data analyst, could you help me retrieve the age for the record where the game identifier is 28 and the person identifier is 8374?",
+    "question_template": "Please find the age for rows where games_id is 28 and person_id is 8374.",
+    "answer": [
+      32
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "games_id",
+        "person_id"
+      ],
+      "selected_values": {
+        "games_id": 28,
+        "person_id": 8374
+      },
+      "target_column": "age",
+      "row_filter_count": 1,
+      "row_indices": [
+        103
+      ],
+      "answer_values": [
+        32
+      ],
+      "template_filled": "Please find the age for rows where games_id is 28 and person_id is 8374.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      103
+    ],
+    "question_sentence": "games_id is 28. person_id is 8374. age is ?"
+  },
+  {
+    "question_id": "Question_G51_Q0",
+    "db_id": "debit_card_specializing",
+    "highlighted_table": [
+      "transactions_1k_T2"
+    ],
+    "all_tables_in_group": [
+      "transactions_1k_T0",
+      "transactions_1k_T1",
+      "transactions_1k_T2",
+      "transactions_1k_T3",
+      "transactions_1k_T4",
+      "transactions_1k_T5",
+      "transactions_1k_T6",
+      "transactions_1k_T7"
+    ],
+    "question": "As a data analyst reviewing fuel sales, could you help me locate the product identifier for entries where the timestamp is exactly 12:37:00 and the gas station identifier is 1206?",
+    "question_template": "Please find the ProductID for rows where Time is 12:37:00 and GasStationID is 1206.",
+    "answer": [
+      2
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "Time",
+        "GasStationID"
+      ],
+      "selected_values": {
+        "Time": "12:37:00",
+        "GasStationID": 1206
+      },
+      "target_column": "ProductID",
+      "row_filter_count": 1,
+      "row_indices": [
+        13
+      ],
+      "answer_values": [
+        2
+      ],
+      "template_filled": "Please find the ProductID for rows where Time is 12:37:00 and GasStationID is 1206.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      13
+    ],
+    "question_sentence": "Time is 12:37:00. GasStationID is 1206. ProductID is ?"
+  },
+  {
+    "question_id": "Question_G51_Q1",
+    "db_id": "debit_card_specializing",
+    "highlighted_table": [
+      "transactions_1k_T3"
+    ],
+    "all_tables_in_group": [
+      "transactions_1k_T0",
+      "transactions_1k_T1",
+      "transactions_1k_T2",
+      "transactions_1k_T3",
+      "transactions_1k_T4",
+      "transactions_1k_T5",
+      "transactions_1k_T6",
+      "transactions_1k_T7"
+    ],
+    "question": "As a data analyst, could you help me retrieve the customer ID for any records where the card ID is 487,005?",
+    "question_template": "Please find the CustomerID for rows where CardID is 487005.",
+    "answer": [
+      25026
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "CardID"
+      ],
+      "selected_values": {
+        "CardID": 487005
+      },
+      "target_column": "CustomerID",
+      "row_filter_count": 1,
+      "row_indices": [
+        8
+      ],
+      "answer_values": [
+        25026
+      ],
+      "template_filled": "Please find the CustomerID for rows where CardID is 487005.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      8
+    ],
+    "question_sentence": "CardID is 487005. CustomerID is ?"
+  },
+  {
+    "question_id": "Question_G52_Q0",
+    "db_id": "food_inspection",
+    "highlighted_table": [
+      "inspections_T3"
+    ],
+    "all_tables_in_group": [
+      "inspections_T0",
+      "inspections_T1",
+      "inspections_T2",
+      "inspections_T3",
+      "inspections_T4",
+      "inspections_T5"
+    ],
+    "question": "As a data analyst, could you help me identify the dates that are linked to the business ID 335?",
+    "question_template": "Which date values correspond to business_id is 335?",
+    "answer": [
+      "2014-03-06",
+      "2014-05-07"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "business_id"
+      ],
+      "selected_values": {
+        "business_id": 335
+      },
+      "target_column": "date",
+      "row_filter_count": 2,
+      "row_indices": [
+        9,
+        110
+      ],
+      "answer_values": [
+        "2014-03-06",
+        "2014-05-07"
+      ],
+      "template_filled": "Which date values correspond to business_id is 335?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      9,
+      110
+    ],
+    "question_sentence": "business_id is 335. date is ?"
+  },
+  {
+    "question_id": "Question_G53_Q0",
+    "db_id": "ice_hockey_draft",
+    "highlighted_table": [
+      "PlayerInfo_T2"
+    ],
+    "all_tables_in_group": [
+      "PlayerInfo_T0",
+      "PlayerInfo_T1",
+      "PlayerInfo_T2",
+      "PlayerInfo_T3",
+      "PlayerInfo_T4",
+      "PlayerInfo_T5"
+    ],
+    "question": "As a researcher, could you help me find the birthplace for records where the birth month is January and the elite ID number is 11112?",
+    "question_template": "Please find the birthplace for rows where birthmonth is 1 and ELITEID is 11112.",
+    "answer": [
+      "Maribor, SLO"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "birthmonth",
+        "ELITEID"
+      ],
+      "selected_values": {
+        "birthmonth": 1,
+        "ELITEID": 11112
+      },
+      "target_column": "birthplace",
+      "row_filter_count": 1,
+      "row_indices": [
+        24
+      ],
+      "answer_values": [
+        "Maribor, SLO"
+      ],
+      "template_filled": "Please find the birthplace for rows where birthmonth is 1 and ELITEID is 11112.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      24
+    ],
+    "question_sentence": "birthmonth is 1. ELITEID is 11112. birthplace is ?"
+  },
+  {
+    "question_id": "Question_G53_Q1",
+    "db_id": "ice_hockey_draft",
+    "highlighted_table": [
+      "PlayerInfo_T4"
+    ],
+    "all_tables_in_group": [
+      "PlayerInfo_T0",
+      "PlayerInfo_T1",
+      "PlayerInfo_T2",
+      "PlayerInfo_T3",
+      "PlayerInfo_T4",
+      "PlayerInfo_T5"
+    ],
+    "question": "As a data analyst, could you let me know which position information values are associated with the elite ID 8597?",
+    "question_template": "Which position_info values correspond to ELITEID is 8597?",
+    "answer": [
+      "D"
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "ELITEID"
+      ],
+      "selected_values": {
+        "ELITEID": 8597
+      },
+      "target_column": "position_info",
+      "row_filter_count": 1,
+      "row_indices": [
+        23
+      ],
+      "answer_values": [
+        "D"
+      ],
+      "template_filled": "Which position_info values correspond to ELITEID is 8597?",
+      "condition_type": "exact_match"
+    },
+    "template": "Which {target} values correspond to {conds}?",
+    "answer_index": [
+      23
+    ],
+    "question_sentence": "ELITEID is 8597. position_info is ?"
+  },
+  {
+    "question_id": "Question_G54_Q0",
+    "db_id": "chinook_1",
+    "highlighted_table": [
+      "InvoiceLine_T1"
+    ],
+    "all_tables_in_group": [
+      "InvoiceLine_T0",
+      "InvoiceLine_T1",
+      "InvoiceLine_T2",
+      "InvoiceLine_T3",
+      "InvoiceLine_T4"
+    ],
+    "question": "As a sales analyst, could you help me retrieve the unit price for the invoice line whose ID is 1871 and where the quantity ordered is exactly 1?",
+    "question_template": "Please find the UnitPrice for rows where InvoiceLineId is 1871.0 and Quantity is 1.0.",
+    "answer": [
+      0.99
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "InvoiceLineId",
+        "Quantity"
+      ],
+      "selected_values": {
+        "InvoiceLineId": 1871.0,
+        "Quantity": 1.0
+      },
+      "target_column": "UnitPrice",
+      "row_filter_count": 1,
+      "row_indices": [
+        133
+      ],
+      "answer_values": [
+        0.99
+      ],
+      "template_filled": "Please find the UnitPrice for rows where InvoiceLineId is 1871.0 and Quantity is 1.0.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      133
+    ],
+    "question_sentence": "InvoiceLineId is 1871.0. Quantity is 1.0. UnitPrice is ?"
+  },
+  {
+    "question_id": "Question_G54_Q1",
+    "db_id": "chinook_1",
+    "highlighted_table": [
+      "InvoiceLine_T3"
+    ],
+    "all_tables_in_group": [
+      "InvoiceLine_T0",
+      "InvoiceLine_T1",
+      "InvoiceLine_T2",
+      "InvoiceLine_T3",
+      "InvoiceLine_T4"
+    ],
+    "question": "As a finance analyst, could you help me find the invoice ID for the row where the invoice line ID is 1604.0 and the unit price is $0.99?",
+    "question_template": "Please find the InvoiceId for rows where InvoiceLineId is 1604.0 and UnitPrice is 0.99.",
+    "answer": [
+      297
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "InvoiceLineId",
+        "UnitPrice"
+      ],
+      "selected_values": {
+        "InvoiceLineId": 1604.0,
+        "UnitPrice": 0.99
+      },
+      "target_column": "InvoiceId",
+      "row_filter_count": 1,
+      "row_indices": [
+        72
+      ],
+      "answer_values": [
+        297
+      ],
+      "template_filled": "Please find the InvoiceId for rows where InvoiceLineId is 1604.0 and UnitPrice is 0.99.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      72
+    ],
+    "question_sentence": "InvoiceLineId is 1604.0. UnitPrice is 0.99. InvoiceId is ?"
+  },
+  {
+    "question_id": "Question_G54_Q2",
+    "db_id": "chinook_1",
+    "highlighted_table": [
+      "InvoiceLine_T0"
+    ],
+    "all_tables_in_group": [
+      "InvoiceLine_T0",
+      "InvoiceLine_T1",
+      "InvoiceLine_T2",
+      "InvoiceLine_T3",
+      "InvoiceLine_T4"
+    ],
+    "question": "As a music‑store analyst, could you help me pull the invoice line IDs for all records where the track identifier is 1133.0?",
+    "question_template": "Please find the InvoiceLineId for rows where TrackId is 1133.0.",
+    "answer": [
+      1913
+    ],
+    "question_type": "EM",
+    "construct_information": {
+      "selected_columns": [
+        "TrackId"
+      ],
+      "selected_values": {
+        "TrackId": 1133.0
+      },
+      "target_column": "InvoiceLineId",
+      "row_filter_count": 1,
+      "row_indices": [
+        104
+      ],
+      "answer_values": [
+        1913
+      ],
+      "template_filled": "Please find the InvoiceLineId for rows where TrackId is 1133.0.",
+      "condition_type": "exact_match"
+    },
+    "template": "Please find the {target} for rows where {conds}.",
+    "answer_index": [
+      104
+    ],
+    "question_sentence": "TrackId is 1133.0. InvoiceLineId is ?"
+  }
+]

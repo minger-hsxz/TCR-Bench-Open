@@ -1,0 +1,1628 @@
+[
+  {
+    "db_id": "hockey",
+    "table_path": "TeamsPost_T0",
+    "table_name": "TeamsPost",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "hockey",
+    "table_path": "TeamsPost_T1",
+    "table_name": "TeamsPost",
+    "table_format": "html"
+  },
+  {
+    "db_id": "hockey",
+    "table_path": "TeamsPost_T2",
+    "table_name": "TeamsPost",
+    "table_format": "html"
+  },
+  {
+    "db_id": "hockey",
+    "table_path": "TeamsPost_T3",
+    "table_name": "TeamsPost",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "books",
+    "table_path": "customer_address_T0",
+    "table_name": "customer_address",
+    "table_format": "html"
+  },
+  {
+    "db_id": "books",
+    "table_path": "customer_address_T1",
+    "table_name": "customer_address",
+    "table_format": "html"
+  },
+  {
+    "db_id": "books",
+    "table_path": "customer_address_T2",
+    "table_name": "customer_address",
+    "table_format": "html"
+  },
+  {
+    "db_id": "books",
+    "table_path": "customer_address_T3",
+    "table_name": "customer_address",
+    "table_format": "html"
+  },
+  {
+    "db_id": "music_platform_2",
+    "table_path": "podcasts_T0",
+    "table_name": "podcasts",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "music_platform_2",
+    "table_path": "podcasts_T1",
+    "table_name": "podcasts",
+    "table_format": "html"
+  },
+  {
+    "db_id": "music_platform_2",
+    "table_path": "podcasts_T2",
+    "table_name": "podcasts",
+    "table_format": "html"
+  },
+  {
+    "db_id": "music_platform_2",
+    "table_path": "podcasts_T3",
+    "table_name": "podcasts",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "music_platform_2",
+    "table_path": "podcasts_T4",
+    "table_name": "podcasts",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "chicago_crime",
+    "table_path": "Crime_T0",
+    "table_name": "Crime",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "chicago_crime",
+    "table_path": "Crime_T1",
+    "table_name": "Crime",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "chicago_crime",
+    "table_path": "Crime_T2",
+    "table_name": "Crime",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movies_4",
+    "table_path": "keyword_T0",
+    "table_name": "keyword",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movies_4",
+    "table_path": "keyword_T1",
+    "table_name": "keyword",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movies_4",
+    "table_path": "keyword_T2",
+    "table_name": "keyword",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movies_4",
+    "table_path": "keyword_T3",
+    "table_name": "keyword",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "legislator",
+    "table_path": "current_T0",
+    "table_name": "current",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "legislator",
+    "table_path": "current_T1",
+    "table_name": "current",
+    "table_format": "html"
+  },
+  {
+    "db_id": "legislator",
+    "table_path": "current_T2",
+    "table_name": "current",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "legislator",
+    "table_path": "current_T3",
+    "table_name": "current",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "legislator",
+    "table_path": "current_T4",
+    "table_name": "current",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "video_games",
+    "table_path": "game_platform_T0",
+    "table_name": "game_platform",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "video_games",
+    "table_path": "game_platform_T1",
+    "table_name": "game_platform",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "video_games",
+    "table_path": "game_platform_T2",
+    "table_name": "game_platform",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "video_games",
+    "table_path": "game_platform_T3",
+    "table_name": "game_platform",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "video_games",
+    "table_path": "game_platform_T4",
+    "table_name": "game_platform",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "financial",
+    "table_path": "disp_T0",
+    "table_name": "disp",
+    "table_format": "html"
+  },
+  {
+    "db_id": "financial",
+    "table_path": "disp_T1",
+    "table_name": "disp",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "financial",
+    "table_path": "disp_T2",
+    "table_name": "disp",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "financial",
+    "table_path": "disp_T3",
+    "table_name": "disp",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "airline",
+    "table_path": "Airlines_T0",
+    "table_name": "Airlines",
+    "table_format": "html"
+  },
+  {
+    "db_id": "airline",
+    "table_path": "Airlines_T1",
+    "table_name": "Airlines",
+    "table_format": "html"
+  },
+  {
+    "db_id": "airline",
+    "table_path": "Airlines_T2",
+    "table_name": "Airlines",
+    "table_format": "html"
+  },
+  {
+    "db_id": "airline",
+    "table_path": "Airlines_T3",
+    "table_name": "Airlines",
+    "table_format": "html"
+  },
+  {
+    "db_id": "airline",
+    "table_path": "Airlines_T4",
+    "table_name": "Airlines",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "student_club",
+    "table_path": "zip_code_T0",
+    "table_name": "zip_code",
+    "table_format": "html"
+  },
+  {
+    "db_id": "student_club",
+    "table_path": "zip_code_T1",
+    "table_name": "zip_code",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "student_club",
+    "table_path": "zip_code_T2",
+    "table_name": "zip_code",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "student_club",
+    "table_path": "zip_code_T3",
+    "table_name": "zip_code",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "student_club",
+    "table_path": "zip_code_T4",
+    "table_name": "zip_code",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "cookbook",
+    "table_path": "Ingredient_T0",
+    "table_name": "Ingredient",
+    "table_format": "html"
+  },
+  {
+    "db_id": "cookbook",
+    "table_path": "Ingredient_T1",
+    "table_name": "Ingredient",
+    "table_format": "html"
+  },
+  {
+    "db_id": "cookbook",
+    "table_path": "Ingredient_T2",
+    "table_name": "Ingredient",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "address",
+    "table_path": "zip_congress_T0",
+    "table_name": "zip_congress",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "address",
+    "table_path": "zip_congress_T1",
+    "table_name": "zip_congress",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "address",
+    "table_path": "zip_congress_T2",
+    "table_name": "zip_congress",
+    "table_format": "html"
+  },
+  {
+    "db_id": "address",
+    "table_path": "zip_congress_T3",
+    "table_name": "zip_congress",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "address",
+    "table_path": "zip_congress_T4",
+    "table_name": "zip_congress",
+    "table_format": "html"
+  },
+  {
+    "db_id": "talkingdata",
+    "table_path": "app_labels_T0",
+    "table_name": "app_labels",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "talkingdata",
+    "table_path": "app_labels_T1",
+    "table_name": "app_labels",
+    "table_format": "html"
+  },
+  {
+    "db_id": "talkingdata",
+    "table_path": "app_labels_T2",
+    "table_name": "app_labels",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "flight_4",
+    "table_path": "routes_T0",
+    "table_name": "routes",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "flight_4",
+    "table_path": "routes_T1",
+    "table_name": "routes",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "flight_4",
+    "table_path": "routes_T2",
+    "table_name": "routes",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "donor",
+    "table_path": "projects_T0",
+    "table_name": "projects",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "donor",
+    "table_path": "projects_T1",
+    "table_name": "projects",
+    "table_format": "html"
+  },
+  {
+    "db_id": "donor",
+    "table_path": "projects_T2",
+    "table_name": "projects",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "donor",
+    "table_path": "projects_T3",
+    "table_name": "projects",
+    "table_format": "html"
+  },
+  {
+    "db_id": "donor",
+    "table_path": "projects_T4",
+    "table_name": "projects",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "food_inspection_2",
+    "table_path": "violation_T0",
+    "table_name": "violation",
+    "table_format": "html"
+  },
+  {
+    "db_id": "food_inspection_2",
+    "table_path": "violation_T1",
+    "table_name": "violation",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "food_inspection_2",
+    "table_path": "violation_T2",
+    "table_name": "violation",
+    "table_format": "html"
+  },
+  {
+    "db_id": "food_inspection_2",
+    "table_path": "violation_T3",
+    "table_name": "violation",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "food_inspection_2",
+    "table_path": "violation_T4",
+    "table_name": "violation",
+    "table_format": "html"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_power_T0",
+    "table_name": "hero_power",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_power_T1",
+    "table_name": "hero_power",
+    "table_format": "html"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_power_T2",
+    "table_name": "hero_power",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_power_T3",
+    "table_name": "hero_power",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "store_1",
+    "table_path": "tracks_T0",
+    "table_name": "tracks",
+    "table_format": "html"
+  },
+  {
+    "db_id": "store_1",
+    "table_path": "tracks_T1",
+    "table_name": "tracks",
+    "table_format": "html"
+  },
+  {
+    "db_id": "store_1",
+    "table_path": "tracks_T2",
+    "table_name": "tracks",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "store_1",
+    "table_path": "tracks_T3",
+    "table_name": "tracks",
+    "table_format": "html"
+  },
+  {
+    "db_id": "store_1",
+    "table_path": "tracks_T4",
+    "table_name": "tracks",
+    "table_format": "html"
+  },
+  {
+    "db_id": "codebase_community",
+    "table_path": "tags_T0",
+    "table_name": "tags",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "codebase_community",
+    "table_path": "tags_T1",
+    "table_name": "tags",
+    "table_format": "html"
+  },
+  {
+    "db_id": "codebase_community",
+    "table_path": "tags_T2",
+    "table_name": "tags",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "codebase_community",
+    "table_path": "tags_T3",
+    "table_name": "tags",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "codebase_community",
+    "table_path": "tags_T4",
+    "table_name": "tags",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "bike_1",
+    "table_path": "trip_T0",
+    "table_name": "trip",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "bike_1",
+    "table_path": "trip_T1",
+    "table_name": "trip",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "bike_1",
+    "table_path": "trip_T2",
+    "table_name": "trip",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "bike_1",
+    "table_path": "trip_T3",
+    "table_name": "trip",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "bike_1",
+    "table_path": "trip_T4",
+    "table_name": "trip",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movies_4",
+    "table_path": "movie_company_T0",
+    "table_name": "movie_company",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movies_4",
+    "table_path": "movie_company_T1",
+    "table_name": "movie_company",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movies_4",
+    "table_path": "movie_company_T2",
+    "table_name": "movie_company",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "books",
+    "table_path": "author_T0",
+    "table_name": "author",
+    "table_format": "html"
+  },
+  {
+    "db_id": "books",
+    "table_path": "author_T1",
+    "table_name": "author",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "books",
+    "table_path": "author_T2",
+    "table_name": "author",
+    "table_format": "html"
+  },
+  {
+    "db_id": "books",
+    "table_path": "author_T3",
+    "table_name": "author",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "players_T0",
+    "table_name": "players",
+    "table_format": "html"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "players_T1",
+    "table_name": "players",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "players_T2",
+    "table_name": "players",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "players_T3",
+    "table_name": "players",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "players_T4",
+    "table_name": "players",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "world_development_indicators",
+    "table_path": "Footnotes_T0",
+    "table_name": "Footnotes",
+    "table_format": "html"
+  },
+  {
+    "db_id": "world_development_indicators",
+    "table_path": "Footnotes_T1",
+    "table_name": "Footnotes",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "world_development_indicators",
+    "table_path": "Footnotes_T2",
+    "table_name": "Footnotes",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "world_development_indicators",
+    "table_path": "Footnotes_T3",
+    "table_name": "Footnotes",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "world_development_indicators",
+    "table_path": "Footnotes_T4",
+    "table_name": "Footnotes",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "movies2actors_T0",
+    "table_name": "movies2actors",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "movies2actors_T1",
+    "table_name": "movies2actors",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "movies2actors_T2",
+    "table_name": "movies2actors",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "movies2actors_T3",
+    "table_name": "movies2actors",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "movies2actors_T4",
+    "table_name": "movies2actors",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "authors",
+    "table_path": "Journal_T0",
+    "table_name": "Journal",
+    "table_format": "html"
+  },
+  {
+    "db_id": "authors",
+    "table_path": "Journal_T1",
+    "table_name": "Journal",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "authors",
+    "table_path": "Journal_T2",
+    "table_name": "Journal",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "authors",
+    "table_path": "Journal_T3",
+    "table_name": "Journal",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "Product_T0",
+    "table_name": "Product",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "Product_T1",
+    "table_name": "Product",
+    "table_format": "html"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "Product_T2",
+    "table_name": "Product",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "Product_T3",
+    "table_name": "Product",
+    "table_format": "html"
+  },
+  {
+    "db_id": "books",
+    "table_path": "publisher_T0",
+    "table_name": "publisher",
+    "table_format": "html"
+  },
+  {
+    "db_id": "books",
+    "table_path": "publisher_T1",
+    "table_name": "publisher",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "books",
+    "table_path": "publisher_T2",
+    "table_name": "publisher",
+    "table_format": "html"
+  },
+  {
+    "db_id": "soccer_1",
+    "table_path": "Team_Attributes_T0",
+    "table_name": "Team_Attributes",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "soccer_1",
+    "table_path": "Team_Attributes_T1",
+    "table_name": "Team_Attributes",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "soccer_1",
+    "table_path": "Team_Attributes_T2",
+    "table_name": "Team_Attributes",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movie",
+    "table_path": "actor_T0",
+    "table_name": "actor",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movie",
+    "table_path": "actor_T1",
+    "table_name": "actor",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movie",
+    "table_path": "actor_T2",
+    "table_name": "actor",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "series_post_T0",
+    "table_name": "series_post",
+    "table_format": "html"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "series_post_T1",
+    "table_name": "series_post",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "professional_basketball",
+    "table_path": "series_post_T2",
+    "table_name": "series_post",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "beer_factory",
+    "table_path": "rootbeer_T0",
+    "table_name": "rootbeer",
+    "table_format": "html"
+  },
+  {
+    "db_id": "beer_factory",
+    "table_path": "rootbeer_T1",
+    "table_name": "rootbeer",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "beer_factory",
+    "table_path": "rootbeer_T2",
+    "table_name": "rootbeer",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_attribute_T0",
+    "table_name": "hero_attribute",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_attribute_T1",
+    "table_name": "hero_attribute",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_attribute_T2",
+    "table_name": "hero_attribute",
+    "table_format": "html"
+  },
+  {
+    "db_id": "superhero",
+    "table_path": "hero_attribute_T3",
+    "table_name": "hero_attribute",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "actors_T0",
+    "table_name": "actors",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "actors_T1",
+    "table_name": "actors",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "actors_T2",
+    "table_name": "actors",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movielens",
+    "table_path": "actors_T3",
+    "table_name": "actors",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "customer_T0",
+    "table_name": "customer",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "customer_T1",
+    "table_name": "customer",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "customer_T2",
+    "table_name": "customer",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "customer_T3",
+    "table_name": "customer",
+    "table_format": "html"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "customer_T4",
+    "table_name": "customer",
+    "table_format": "html"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "customer_T5",
+    "table_name": "customer",
+    "table_format": "html"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "customer_T6",
+    "table_name": "customer",
+    "table_format": "html"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "orders_T0",
+    "table_name": "orders",
+    "table_format": "html"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "orders_T1",
+    "table_name": "orders",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "orders_T2",
+    "table_name": "orders",
+    "table_format": "html"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "orders_T3",
+    "table_name": "orders",
+    "table_format": "html"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "orders_T4",
+    "table_name": "orders",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "retails",
+    "table_path": "orders_T5",
+    "table_name": "orders",
+    "table_format": "html"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T0",
+    "table_name": "constructorStandings",
+    "table_format": "html"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T1",
+    "table_name": "constructorStandings",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T2",
+    "table_name": "constructorStandings",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T3",
+    "table_name": "constructorStandings",
+    "table_format": "html"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T4",
+    "table_name": "constructorStandings",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T5",
+    "table_name": "constructorStandings",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T6",
+    "table_name": "constructorStandings",
+    "table_format": "html"
+  },
+  {
+    "db_id": "formula_1",
+    "table_path": "constructorStandings_T7",
+    "table_name": "constructorStandings",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "inventory_T0",
+    "table_name": "inventory",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "inventory_T1",
+    "table_name": "inventory",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "inventory_T2",
+    "table_name": "inventory",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "inventory_T3",
+    "table_name": "inventory",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "inventory_T4",
+    "table_name": "inventory",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "inventory_T5",
+    "table_name": "inventory",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "california_schools",
+    "table_path": "schools_T0",
+    "table_name": "schools",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "california_schools",
+    "table_path": "schools_T1",
+    "table_name": "schools",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "california_schools",
+    "table_path": "schools_T2",
+    "table_name": "schools",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "california_schools",
+    "table_path": "schools_T3",
+    "table_name": "schools",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "california_schools",
+    "table_path": "schools_T4",
+    "table_name": "schools",
+    "table_format": "html"
+  },
+  {
+    "db_id": "california_schools",
+    "table_path": "schools_T5",
+    "table_name": "schools",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T0",
+    "table_name": "south_superstore",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T1",
+    "table_name": "south_superstore",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T2",
+    "table_name": "south_superstore",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T3",
+    "table_name": "south_superstore",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T4",
+    "table_name": "south_superstore",
+    "table_format": "html"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T5",
+    "table_name": "south_superstore",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T6",
+    "table_name": "south_superstore",
+    "table_format": "html"
+  },
+  {
+    "db_id": "superstore",
+    "table_path": "south_superstore_T7",
+    "table_name": "south_superstore",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "PurchaseOrderDetail_T0",
+    "table_name": "PurchaseOrderDetail",
+    "table_format": "html"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "PurchaseOrderDetail_T1",
+    "table_name": "PurchaseOrderDetail",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "PurchaseOrderDetail_T2",
+    "table_name": "PurchaseOrderDetail",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "PurchaseOrderDetail_T3",
+    "table_name": "PurchaseOrderDetail",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "PurchaseOrderDetail_T4",
+    "table_name": "PurchaseOrderDetail",
+    "table_format": "html"
+  },
+  {
+    "db_id": "world_1",
+    "table_path": "city_T0",
+    "table_name": "city",
+    "table_format": "html"
+  },
+  {
+    "db_id": "world_1",
+    "table_path": "city_T1",
+    "table_name": "city",
+    "table_format": "html"
+  },
+  {
+    "db_id": "world_1",
+    "table_path": "city_T2",
+    "table_name": "city",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "world_1",
+    "table_path": "city_T3",
+    "table_name": "city",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "world_1",
+    "table_path": "city_T4",
+    "table_name": "city",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "public_review_platform",
+    "table_path": "Business_Hours_T0",
+    "table_name": "Business_Hours",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "public_review_platform",
+    "table_path": "Business_Hours_T1",
+    "table_name": "Business_Hours",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "public_review_platform",
+    "table_path": "Business_Hours_T2",
+    "table_name": "Business_Hours",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "public_review_platform",
+    "table_path": "Business_Hours_T3",
+    "table_name": "Business_Hours",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "public_review_platform",
+    "table_path": "Business_Hours_T4",
+    "table_name": "Business_Hours",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "public_review_platform",
+    "table_path": "Business_Hours_T5",
+    "table_name": "Business_Hours",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "music_tracker",
+    "table_path": "torrents_T0",
+    "table_name": "torrents",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "music_tracker",
+    "table_path": "torrents_T1",
+    "table_name": "torrents",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "music_tracker",
+    "table_path": "torrents_T2",
+    "table_name": "torrents",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "music_tracker",
+    "table_path": "torrents_T3",
+    "table_name": "torrents",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "music_tracker",
+    "table_path": "torrents_T4",
+    "table_name": "torrents",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "software_company",
+    "table_path": "mailings3_T0",
+    "table_name": "mailings3",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "software_company",
+    "table_path": "mailings3_T1",
+    "table_name": "mailings3",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "software_company",
+    "table_path": "mailings3_T2",
+    "table_name": "mailings3",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "software_company",
+    "table_path": "mailings3_T3",
+    "table_name": "mailings3",
+    "table_format": "html"
+  },
+  {
+    "db_id": "software_company",
+    "table_path": "mailings3_T4",
+    "table_name": "mailings3",
+    "table_format": "html"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "gasstations_T0",
+    "table_name": "gasstations",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "gasstations_T1",
+    "table_name": "gasstations",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "gasstations_T2",
+    "table_name": "gasstations",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "gasstations_T3",
+    "table_name": "gasstations",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "gasstations_T4",
+    "table_name": "gasstations",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "gasstations_T5",
+    "table_name": "gasstations",
+    "table_format": "html"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "gasstations_T6",
+    "table_name": "gasstations",
+    "table_format": "html"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T0",
+    "table_name": "province",
+    "table_format": "html"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T1",
+    "table_name": "province",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T2",
+    "table_name": "province",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T3",
+    "table_name": "province",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T4",
+    "table_name": "province",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T5",
+    "table_name": "province",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T6",
+    "table_name": "province",
+    "table_format": "html"
+  },
+  {
+    "db_id": "mondial_geo",
+    "table_path": "province_T7",
+    "table_name": "province",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "SalesOrderHeader_T0",
+    "table_name": "SalesOrderHeader",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "SalesOrderHeader_T1",
+    "table_name": "SalesOrderHeader",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "SalesOrderHeader_T2",
+    "table_name": "SalesOrderHeader",
+    "table_format": "html"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "SalesOrderHeader_T3",
+    "table_name": "SalesOrderHeader",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "SalesOrderHeader_T4",
+    "table_name": "SalesOrderHeader",
+    "table_format": "html"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "SalesOrderHeader_T5",
+    "table_name": "SalesOrderHeader",
+    "table_format": "html"
+  },
+  {
+    "db_id": "works_cycles",
+    "table_path": "SalesOrderHeader_T6",
+    "table_name": "SalesOrderHeader",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "wta_1",
+    "table_path": "matches_T0",
+    "table_name": "matches",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "wta_1",
+    "table_path": "matches_T1",
+    "table_name": "matches",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "wta_1",
+    "table_path": "matches_T2",
+    "table_name": "matches",
+    "table_format": "html"
+  },
+  {
+    "db_id": "wta_1",
+    "table_path": "matches_T3",
+    "table_name": "matches",
+    "table_format": "html"
+  },
+  {
+    "db_id": "wta_1",
+    "table_path": "matches_T4",
+    "table_name": "matches",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "film_text_T0",
+    "table_name": "film_text",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "film_text_T1",
+    "table_name": "film_text",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "film_text_T2",
+    "table_name": "film_text",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "film_text_T3",
+    "table_name": "film_text",
+    "table_format": "html"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "film_text_T4",
+    "table_name": "film_text",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "movie_3",
+    "table_path": "film_text_T5",
+    "table_name": "film_text",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "olympics",
+    "table_path": "games_competitor_T0",
+    "table_name": "games_competitor",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "olympics",
+    "table_path": "games_competitor_T1",
+    "table_name": "games_competitor",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "olympics",
+    "table_path": "games_competitor_T2",
+    "table_name": "games_competitor",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "olympics",
+    "table_path": "games_competitor_T3",
+    "table_name": "games_competitor",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "olympics",
+    "table_path": "games_competitor_T4",
+    "table_name": "games_competitor",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "olympics",
+    "table_path": "games_competitor_T5",
+    "table_name": "games_competitor",
+    "table_format": "html"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T0",
+    "table_name": "transactions_1k",
+    "table_format": "html"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T1",
+    "table_name": "transactions_1k",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T2",
+    "table_name": "transactions_1k",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T3",
+    "table_name": "transactions_1k",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T4",
+    "table_name": "transactions_1k",
+    "table_format": "html"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T5",
+    "table_name": "transactions_1k",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T6",
+    "table_name": "transactions_1k",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "debit_card_specializing",
+    "table_path": "transactions_1k_T7",
+    "table_name": "transactions_1k",
+    "table_format": "html"
+  },
+  {
+    "db_id": "food_inspection",
+    "table_path": "inspections_T0",
+    "table_name": "inspections",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "food_inspection",
+    "table_path": "inspections_T1",
+    "table_name": "inspections",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "food_inspection",
+    "table_path": "inspections_T2",
+    "table_name": "inspections",
+    "table_format": "html"
+  },
+  {
+    "db_id": "food_inspection",
+    "table_path": "inspections_T3",
+    "table_name": "inspections",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "food_inspection",
+    "table_path": "inspections_T4",
+    "table_name": "inspections",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "food_inspection",
+    "table_path": "inspections_T5",
+    "table_name": "inspections",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "ice_hockey_draft",
+    "table_path": "PlayerInfo_T0",
+    "table_name": "PlayerInfo",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "ice_hockey_draft",
+    "table_path": "PlayerInfo_T1",
+    "table_name": "PlayerInfo",
+    "table_format": "html"
+  },
+  {
+    "db_id": "ice_hockey_draft",
+    "table_path": "PlayerInfo_T2",
+    "table_name": "PlayerInfo",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "ice_hockey_draft",
+    "table_path": "PlayerInfo_T3",
+    "table_name": "PlayerInfo",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "ice_hockey_draft",
+    "table_path": "PlayerInfo_T4",
+    "table_name": "PlayerInfo",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "ice_hockey_draft",
+    "table_path": "PlayerInfo_T5",
+    "table_name": "PlayerInfo",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "chinook_1",
+    "table_path": "InvoiceLine_T0",
+    "table_name": "InvoiceLine",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "chinook_1",
+    "table_path": "InvoiceLine_T1",
+    "table_name": "InvoiceLine",
+    "table_format": "csv"
+  },
+  {
+    "db_id": "chinook_1",
+    "table_path": "InvoiceLine_T2",
+    "table_name": "InvoiceLine",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "chinook_1",
+    "table_path": "InvoiceLine_T3",
+    "table_name": "InvoiceLine",
+    "table_format": "markdown"
+  },
+  {
+    "db_id": "chinook_1",
+    "table_path": "InvoiceLine_T4",
+    "table_name": "InvoiceLine",
+    "table_format": "csv"
+  }
+]
