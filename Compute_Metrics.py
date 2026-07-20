@@ -3,6 +3,7 @@ compute_metrics.py
 
 Compute Top-k Recall (R@k), Top-k Group Recall (GR@k), and
 Top-1 Discriminative Score (DS@1) for a single output JSON file.
+Results include overall metrics and breakdowns by question_type.
 
 Usage:
     python compute_metrics.py \
@@ -75,9 +76,31 @@ def parse_pred_list(raw_text):
 # Metric computation
 # ---------------------------------------------------------------------------
 
+def _summarize_metrics(per_query, max_k):
+    """
+    Return aggregated metric values.
+
+    R@k and GR@k are averaged over queries. DS@1 is computed globally as
+    mean(R@1) / mean(GR@1), not as the mean of per-query DS@1 values.
+    """
+    if per_query.empty:
+        return {}
+
+    summary = {}
+    for k in range(1, max_k + 1):
+        summary[f"R@{k}"] = per_query[f"R@{k}"].mean()
+        summary[f"GR@{k}"] = per_query[f"GR@{k}"].mean()
+
+    gr1 = summary["GR@1"]
+    summary["DS@1"] = summary["R@1"] / gr1 if gr1 > 0 else 0.0
+    return summary
+
+
 def compute_metrics(data, pred_key, max_k=5):
     """
-    Compute R@k, GR@k, and DS@1 for each query and aggregate.
+    Compute R@k and GR@k for each query, then aggregate.
+
+    DS@1 is computed at the aggregate level as mean(R@1) / mean(GR@1).
 
     Parameters
     ----------
@@ -87,8 +110,9 @@ def compute_metrics(data, pred_key, max_k=5):
 
     Returns
     -------
-    per_query : pd.DataFrame with one row per query and columns for each metric
-    summary   : dict with averaged metric values
+    per_query          : pd.DataFrame with one row per query and columns for each metric
+    summary            : dict with averaged metric values over all queries
+    summary_by_type    : dict mapping question_type -> averaged metric values
     """
     records = []
 
@@ -106,8 +130,12 @@ def compute_metrics(data, pred_key, max_k=5):
         # Parse the ranked prediction list for this mode
         parsed = parse_pred_list(item.get(pred_key, "[]"))
 
-        row = {"db_id": db_id, "target_table": target_table,
-               "group_size": group_size}
+        row = {
+            "db_id": db_id,
+            "target_table": target_table,
+            "group_size": group_size,
+            "question_type": item.get("question_type", "unknown"),
+        }
 
         # ---- R@k : has the exact target table appeared in top-k? ----
         target_found_at = None   # first rank (1-based) where target appears
@@ -131,24 +159,18 @@ def compute_metrics(data, pred_key, max_k=5):
             denom = min(group_size, k)
             row[f"GR@{k}"] = seen_group_hits / denom
 
-        # ---- DS@1 : R@1 / GR@1 (discriminative ability at rank 1) ----
-        gr1 = row["GR@1"]
-        row["DS@1"] = (row["R@1"] / gr1) if gr1 > 0 else 0.0
-
         records.append(row)
 
     per_query = pd.DataFrame(records)
 
-    # Aggregate: mean over all queries
-    metric_cols = (
-        [f"R@{k}"  for k in range(1, max_k + 1)] +
-        [f"GR@{k}" for k in range(1, max_k + 1)] +
-        ["DS@1"]
-    )
-    summary = {col: per_query[col].mean() for col in metric_cols
-               if col in per_query.columns}
+    summary = _summarize_metrics(per_query, max_k)
 
-    return per_query, summary
+    summary_by_type = {}
+    if not per_query.empty and "question_type" in per_query.columns:
+        for qtype, group in per_query.groupby("question_type", sort=True):
+            summary_by_type[qtype] = _summarize_metrics(group, max_k)
+
+    return per_query, summary, summary_by_type
 
 
 # ---------------------------------------------------------------------------
@@ -173,17 +195,36 @@ def main():
     print(f"[INFO] Mode: {args.mode}  →  using field '{pred_key}'")
 
     # Compute metrics
-    per_query, summary = compute_metrics(data, pred_key, max_k=args.max_k)
+    per_query, summary, summary_by_type = compute_metrics(
+        data, pred_key, max_k=args.max_k
+    )
+
+    def _print_summary(label, metrics):
+        print(f"\n----- {label} -----")
+        for metric, val in metrics.items():
+            print(f"  {metric:8s}: {val:.4f}")
 
     # Print summary to console
     print("\n===== Metric Summary =====")
-    for metric, val in summary.items():
-        print(f"  {metric:8s}: {val:.4f}")
+    _print_summary("Overall (all)", summary)
+    for qtype in sorted(summary_by_type):
+        _print_summary(f"question_type = {qtype}", summary_by_type[qtype])
     print("==========================\n")
 
-    # Build output DataFrame: a single summary row with averaged metrics
-    summary_row = {metric: round(val, 6) for metric, val in summary.items()}
-    output_df = pd.DataFrame([summary_row])
+    # Build output DataFrame: overall + per-question_type rows
+    output_rows = []
+    overall_row = {"question_type": "all"}
+    overall_row.update({metric: round(val, 6) for metric, val in summary.items()})
+    output_rows.append(overall_row)
+
+    for qtype in sorted(summary_by_type):
+        type_row = {"question_type": qtype}
+        type_row.update(
+            {metric: round(val, 6) for metric, val in summary_by_type[qtype].items()}
+        )
+        output_rows.append(type_row)
+
+    output_df = pd.DataFrame(output_rows)
 
     # Ensure output directory exists
     os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)
