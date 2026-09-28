@@ -1,16 +1,19 @@
-# TCR-Bench: Table Content-Level Answerability-Aware Retrieval Benchmark for RAG
+# TCR-Bench: Controlled Sibling-Table Benchmark for Diagnosing the Semantic-Answerability Gap in Table RAG
 
 ## Overview
 
-TCR-Bench is a **diagnostic benchmark for Table Retrieval in Retrieval-Augmented Generation (RAG)** systems. Its primary goal is to evaluate whether a retriever can identify **tables that truly contain the evidence required to answer a query**, rather than relying on superficial semantic similarity or topic clustering.
-![TCR-Bench Construction and Retrieval Flow](./figure/main.png)
+TCR-Bench is a **controlled diagnostic benchmark** for studying the **Semantic-Answerability Gap (SAG)** in Table Retrieval-Augmented Generation (Table RAG). Semantic relevance asks whether a source matches a query in meaning, while **answerability** asks whether it contains sufficient information to answer the query. SAG arises when a retriever reaches semantically relevant sources yet fails to identify those that are **uniquely answerable**.
 
-This figure illustrates the TCR-Bench table grouping process, including the Target Table, Sibling Distractor Tables, and Non-Sibling Tables, along with example retrieval outcomes.
+TCR-Bench uses tables as a controlled setting: shared schemas and entities provide strong semantic signals, while localized content and row–column bindings distinguish answerable from non-answerable sources. Its primary goal is to evaluate whether a retriever can identify **tables that truly contain the evidence required to answer a query**, rather than relying on superficial semantic similarity or topic clustering.
+
+![TCR-Bench Construction, SAG Diagnosis, and Answerability Modeling](./figure/main.png)
+
+This figure summarizes the study: (left) TCR-Bench construction with Target Tables and Sibling Distractors; (center) SAG diagnosis in dense embedding space; (right) answerability modeling via reranking and fine-tuning.
 
 To create a challenging retrieval setting, tables are organized into **groups derived from the same source table**. Each group contains:
 
-* **Target Table** – the only table that fully satisfies all query constraints.
-* **Sibling Distractor Tables** – hard negatives derived from the same source table with subtle modifications.
+* **Target Table** – the only table that fully satisfies all query constraints (answerable).
+* **Sibling Distractor Tables** – hard negatives derived from the same source table with subtle modifications (semantically similar but non-answerable).
 * **Non-Sibling Tables** – unrelated tables.
 
 This design forces retrieval systems to rely on **content-level and structural understanding** rather than simple keyword or schema matching.
@@ -72,11 +75,12 @@ tools/                    # Utility scripts
 ├── mklog.py              # Logging utilities
 ├── jina_embedding_v4.py  # Example retrieval scripts, Similar named files exist; feel free to add more
 
-Embedding.py          # Dense retrieval implementation
-Rerank_in_topk.py     # Reranker-based top-k reranking (AAR-CE)
-LLM_rerank_in_topk.py # LLM-based reranking (AAR-Judge)
-run_RAG.sh            # Example pipeline script
-Compute_Metrics.py    # Compute the metric in the paper
+Embedding.py       # Dense retrieval implementation
+AAR_CE.py          # Cross-encoder top-k reranking (AAR-CE)
+AAR_LLM_PW.py      # Pointwise LLM answerability judge (AAR-LLM-PW)
+AAR_LLM_LW.py      # Listwise LLM ranking (AAR-LLM-LW)
+run_RAG.sh         # Example pipeline script
+Compute_Metrics.py # Compute R@k, GR@k, and global DS@1
 ```
 
 ---
@@ -140,21 +144,25 @@ Example entry from `TCR_Tables.json`:
 * `table_format` – table representation format (`markdown`, `html`, `csv`, `mixed`)
 
 ---
+
 ## Quick Start
 
 ### Install Dependencies
+
 Before running the example, install the required packages:
+
 ```bash
 pip install -r requirements.txt
-````
+```
 
 ### Run the Example Pipeline
 
 The repository provides a complete example RAG pipeline via `run_RAG.sh`. The pipeline consists of:
 
 1. **Embedding Retrieval** – retrieve top-k tables using an embedding model.
-2. **Answerability-Aware Reranking (AAR-CE)** – rerank retrieved tables with a cross-encoder that models fine-grained query-table interaction.
-3. **Answerability-Aware Reranking (AAR-Judge)** – optionally apply a large language model as a binary answerability judge for query-table pairs.
+2. **AAR-CE** – rerank with a cross-encoder that models fine-grained query–table interaction.
+3. **AAR-LLM-PW** – optionally apply a large language model as a **pointwise** binary answerability judge.
+4. **AAR-LLM-LW** – optionally apply a large language model for **listwise** ranking over the candidate pool.
 
 ```bash
 bash run_RAG.sh
@@ -166,22 +174,28 @@ The script will automatically load the dataset (`TCR_Questions.json` and `TCR_Ta
 
 **Answerability-Aware Reranking (AAR)**
 
-To address the limitation of dense retrievers in identifying the uniquely answerable table within a group, we adopt a two-stage **Answerability-Aware Reranking (AAR)** framework.
+To address the limitation of dense retrievers in identifying the uniquely answerable table within a group, we adopt **Answerability-Aware Reranking (AAR)** as a diagnostic framework. AAR first retrieves top-k candidate tables using a dense retriever, then applies query-conditioned interaction to rerank them based on answerability.
 
-AAR first retrieves top-k candidate tables (k=10) using a dense retriever, and then applies query-conditioned interaction to rerank them based on answerability.
+We provide three implementations:
 
-We provide two implementations:
+* **AAR-CE**: a cross-encoder reranker that scores query–table pairs with full interaction.
+* **AAR-LLM-PW**: a pointwise LLM-based answerability classifier (Yes/No per candidate).
+* **AAR-LLM-LW**: a listwise LLM reranker that jointly ranks all candidates in one call.
 
-* **AAR-CE**: a cross-encoder reranker that scores query-table pairs with full interaction.
-* **AAR-Judge**: an LLM-based reranker that treats reranking as a binary answerability judgment task.
+This design substantially improves fine-grained table selection compared to embedding-only retrieval, highlighting that the main bottleneck lies in coarse single-vector retrieval rather than model scale alone.
 
-This design significantly improves fine-grained table selection compared to embedding-only retrieval, highlighting that the main bottleneck lies in coarse single-vector retrieval rather than model scale.
+* **Embedding.py** – dense retrieval.
+* **AAR_CE.py** – AAR-CE.
+* **AAR_LLM_PW.py** – AAR-LLM-PW.
+* **AAR_LLM_LW.py** – AAR-LLM-LW.
 
-* **Embedding.py** handles dense retrieval.
-* **Rerank_in_topk.py** handles reranker-based top-k reranking (AAR-CE).
-* **LLM_rerank_in_topk.py** handles LLM-based reranking (AAR-Judge).
+The pipeline reads all necessary files and saves results to `./results/`, `./results_rerank/`, `./results_rerank_LLM_PW/`, and `./results_rerank_LLM_LW/`.
 
-This setup avoids manual JSON loading; the pipeline reads all necessary files and saves results to `./results/`, `./results_rerank/`, and `./results_rerank_LLM/` folders.
+**Metrics (`Compute_Metrics.py`)**
+
+* **R@k** – whether the uniquely answerable Target appears in top-k (averaged over queries).
+* **GR@k** – fraction of the sibling group covered in top-k (averaged over queries).
+* **DS@1** – **global** discriminative score: `mean(R@1) / mean(GR@1)` (not the mean of per-query ratios). It measures how effectively the retriever identifies the answerable target within its semantically relevant group.
 
 ---
 
@@ -227,10 +241,13 @@ The repository provides reference implementations for:
   `Embedding.py`
 
 * **Answerability-Aware Reranking (AAR-CE)**
-  `Rerank_in_topk.py`
+  `AAR_CE.py`
 
-* **Answerability-Aware Reranking (AAR-Judge)**
-  `LLM_rerank_in_topk.py`
+* **Answerability-Aware Reranking (AAR-LLM-PW)**
+  `AAR_LLM_PW.py`
+
+* **Answerability-Aware Reranking (AAR-LLM-LW)**
+  `AAR_LLM_LW.py`
 
 These scripts can be used as starting points for building custom Table RAG systems.
 
@@ -240,15 +257,16 @@ These scripts can be used as starting points for building custom Table RAG syste
 
 ![Embedding Model Retrieval Performance](./figure/main_result.png)
 
-We evaluate a representative set of embedding models (Qwen3-Embedding-0.6B, Qwen3-Embedding-4B, Qwen3-Embedding-8B, stella_en_1.5B_v5, jina-embeddings-v4, bge-m3, gte_Qwen2-7B-instruct...) under the Mixed setting:
+We evaluate a representative set of embedding models (Qwen3-Embedding-0.6B/4B/8B, stella_en_1.5B_v5, jina-embeddings-v4, bge-m3, gte_Qwen2-7B-instruct, …) under the Mixed setting:
 
-* **Top-1 Recall (R@1)**: highest 0.182 (Qwen3-Embedding-8B)  
-* **Top-k Group Recall (GR@k)**: Qwen3-Embedding-8B $GR@1=0.670$, indicating strong coarse-grained group discrimination  
-* **Top-1 Discriminative Score (DS@1)**: generally below random expectation ($DS@1=0.298$), showing that fine-grained selection among sibling tables remains challenging  
+* **Top-1 Recall (R@1)**: highest 0.182 (Qwen3-Embedding-8B)
+* **Top-k Group Recall (GR@k)**: Qwen3-Embedding-8B reaches $GR@1=0.670$, indicating strong coarse-grained group discrimination
+* **Top-1 Discriminative Score (DS@1)**: generally near or below the random-selection baseline ($DS@1=0.298$ when column-deletion variants are excluded), e.g. Qwen3-Embedding-8B at $DS@1=0.271$, showing that fine-grained selection among sibling tables remains challenging
 
-**Conclusion:** Embedding models perform well at distinguishing table groups but lack the structural understanding required for precise selection of sibling candidate tables. Incorporating Answerability-Aware Reranking (AAR) significantly improves exact target identification, indicating that the primary bottleneck lies in first-stage dense retrieval rather than model capacity.
+**Conclusion:** Dense retrievers perform well at distinguishing table groups (semantic neighborhood) but lack the structural understanding required for precise selection of the uniquely answerable Target among Sibling Distractors—the Semantic-Answerability Gap (SAG). Incorporating Answerability-Aware Reranking (AAR) substantially improves exact target identification, indicating that the primary bottleneck lies in first-stage dense retrieval rather than model capacity alone.
 
 ---
+
 ## License
 
 · Code: [MIT](LICENSE)

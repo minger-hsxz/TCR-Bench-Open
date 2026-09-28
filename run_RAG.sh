@@ -9,7 +9,7 @@ GPUs=("0")
 # ==========================================================
 # General Parameters
 # ==========================================================
-content_type="single"
+content_type="question"
 key="xxx"
 url="xxx"
 
@@ -34,11 +34,11 @@ questions_json="./data/TCR_Questions.json"
 embedding_model_big="Qwen/Qwen3-Embedding-0.6B"
 embedding_model_small="Qwen3-Embedding-0.6B"
 
-# Reranker model
+# Reranker model (AAR-CE)
 reranker_model_big="Qwen/Qwen3-Reranker-0.6B"
 reranker_model_small="Qwen3-Reranker-0.6B"
 
-# LLM reranker model
+# LLM reranker model (AAR-LLM-PW / AAR-LLM-LW)
 llm_reranker_model="Qwen/Qwen3-30B-A3B-Thinking-2507"
 
 # ==========================================================
@@ -65,13 +65,12 @@ CUDA_VISIBLE_DEVICES=${gpu_id} python Embedding.py \
 wait
 
 # ==========================================================
-# Step 2: Reranker Model Reranking
+# Step 2: AAR-CE (cross-encoder reranking)
 # ==========================================================
-# Use a dedicated reranker model to rerank the retrieved results
 
-echo "========== Step 2: Reranker Model =========="
+echo "========== Step 2: AAR-CE (Cross-Encoder) =========="
 
-CUDA_VISIBLE_DEVICES=${gpu_id} python Rerank_in_topk.py \
+CUDA_VISIBLE_DEVICES=${gpu_id} python AAR_CE.py \
   --model-path ${reranker_model_big} \
   --tables_json_path ${tables_json_path} \
   --tables_path ${tables_path} \
@@ -86,20 +85,19 @@ CUDA_VISIBLE_DEVICES=${gpu_id} python Rerank_in_topk.py \
 wait
 
 # ==========================================================
-# Step 3: LLM-based Reranking
+# Step 3: AAR-LLM-PW (pointwise LLM answerability judge)
 # ==========================================================
-# Use a large language model to perform reasoning-based reranking
 
-echo "========== Step 3: LLM Reranking =========="
+echo "========== Step 3: AAR-LLM-PW (Pointwise) =========="
 
-CUDA_VISIBLE_DEVICES=${gpu_id} python LLM_rerank_in_topk.py \
+CUDA_VISIBLE_DEVICES=${gpu_id} python AAR_LLM_PW.py \
   --model-path ${llm_reranker_model} \
   --tables_json_path ${tables_json_path} \
   --tables_path ${tables_path} \
   --json-path ./results/${embedding_model_small}/${table_format}/TCRAG_top5/output.json \
   --content_type ${content_type} \
   --table_format ${table_format} \
-  --output-path ./results_rerank_LLM/${embedding_model_small}/${table_format}/TCRAG_top5 \
+  --output-path ./results_rerank_LLM_PW/${embedding_model_small}/${table_format}/TCRAG_top5 \
   --key ${key} \
   --url ${url} \
   --top-k 3
@@ -107,11 +105,33 @@ CUDA_VISIBLE_DEVICES=${gpu_id} python LLM_rerank_in_topk.py \
 wait
 
 # ==========================================================
-# Step 4: Compute Metrics
+# Step 4: AAR-LLM-LW (listwise LLM ranking)
+# ==========================================================
+
+echo "========== Step 4: AAR-LLM-LW (Listwise) =========="
+
+CUDA_VISIBLE_DEVICES=${gpu_id} python AAR_LLM_LW.py \
+  --model-path ${llm_reranker_model} \
+  --tables_json_path ${tables_json_path} \
+  --tables_path ${tables_path} \
+  --json-path ./results/${embedding_model_small}/${table_format}/TCRAG_top5/output.json \
+  --content_type ${content_type} \
+  --table_format ${table_format} \
+  --output-path ./results_rerank_LLM_LW/${embedding_model_small}/${table_format}/TCRAG_top5 \
+  --key ${key} \
+  --url ${url} \
+  --in-topk 5 \
+  --top-k 3
+
+wait
+
+# ==========================================================
+# Step 5: Compute Metrics
 # ==========================================================
 # Evaluate retrieval metrics (R@k, GR@k, DS@1) for each output
+# Note: DS@1 is computed globally as mean(R@1) / mean(GR@1)
 
-echo "========== Step 4: Compute Metrics =========="
+echo "========== Step 5: Compute Metrics =========="
 
 # Step 1 output: Embedding mode
 python Compute_Metrics.py \
@@ -119,16 +139,22 @@ python Compute_Metrics.py \
   --output ./results/${embedding_model_small}/${table_format}/TCRAG_top5/full_result.csv \
   --mode   Embedding
 
-# Step 2 output: Rerank mode
+# Step 2 output: Rerank mode (AAR-CE)
 python Compute_Metrics.py \
   --input  ./results_rerank/${reranker_model_small}/${embedding_model_small}/${table_format}/TCRAG_top5/output.json \
   --output ./results_rerank/${reranker_model_small}/${embedding_model_small}/${table_format}/TCRAG_top5/full_result.csv \
   --mode   Rerank
 
-# Step 3 output: Rerank mode (LLM reranker also uses output_text_rerank)
+# Step 3 output: AAR-LLM-PW
 python Compute_Metrics.py \
-  --input  ./results_rerank_LLM/${embedding_model_small}/${table_format}/TCRAG_top5/output.json \
-  --output ./results_rerank_LLM/${embedding_model_small}/${table_format}/TCRAG_top5/full_result.csv \
+  --input  ./results_rerank_LLM_PW/${embedding_model_small}/${table_format}/TCRAG_top5/output.json \
+  --output ./results_rerank_LLM_PW/${embedding_model_small}/${table_format}/TCRAG_top5/full_result.csv \
+  --mode   Rerank
+
+# Step 4 output: AAR-LLM-LW
+python Compute_Metrics.py \
+  --input  ./results_rerank_LLM_LW/${embedding_model_small}/${table_format}/TCRAG_top5/output.json \
+  --output ./results_rerank_LLM_LW/${embedding_model_small}/${table_format}/TCRAG_top5/full_result.csv \
   --mode   Rerank
 
 echo "========== Pipeline Finished =========="

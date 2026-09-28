@@ -1,3 +1,7 @@
+"""
+AAR-LLM-PW: pointwise LLM answerability judge over dense top-k candidates.
+"""
+
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
 from transformers import AutoConfig
@@ -39,6 +43,11 @@ from tools.process_json import save_json
 
 from tools.qwen3_rerank import rerank
 
+from openai import OpenAI
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import re
+from threading import Lock
+
 def get_embedding_all(query, tokenizer, model, model_name):
     if 'bge-m3' in model_name.lower():
         from tools.m3_embedding import get_embedding
@@ -62,7 +71,7 @@ def str_to_list(s: str) -> List[str]:
     return ast.literal_eval(s)
 
 def load_all_tables(tables_json_path, tables_path, table_format):
-    """Load tables.json, read all tables, build table_store (without embedding)."""
+    """Load tables.json, read all tables, build table_store (without embedding)"""
     with open(tables_json_path, 'r', encoding='utf-8') as f:
         tables_data = json.load(f)
 
@@ -88,33 +97,6 @@ def load_all_tables(tables_json_path, tables_path, table_format):
         }
 
     return table_store
-
-def rerank_topk_tables(
-    query,
-    table_store,
-    tokenizer,
-    model,
-    task_prompt,
-    topk=1
-):
-    """Score all tables with reranker and return top-k."""
-
-    scores = []
-    for key, val in table_store.items():
-        table_str = val["table_str"]
-
-        # Call rerank function directly
-        score = rerank(
-            model,
-            tokenizer,
-            task_prompt,
-            query,
-            table_str
-        )
-        scores.append((key, score))
-
-    scores.sort(key=lambda x: x[1], reverse=True)
-    return scores[:topk]
 
 def trans_tables(table_name, df, table_format):
     empty_df = df.copy()
@@ -143,24 +125,103 @@ def trans_tables(table_name, df, table_format):
     result = f"{table_name}:\n{table_infos}\n\n"
     return result
 
+# ======================
+# rerank (order within query)
+# ======================
+def rerank_topk_tables(
+        client,
+        query,
+        table_store,
+        model,
+        task_prompt,
+        topk=1
+):
+    """Score candidate tables for a query and return top-k"""
+
+    def check_answerable(table_str):
+        messages = [
+            {
+                "role": "system",
+                "content": task_prompt
+            },
+            {
+                "role": "user",
+                "content": (
+                    f"Table:\n{table_str}\n\n"
+                    f"Query: {query}\n\n"
+                    "Please output your response in the following format:\n"
+                    "```Yes``` or ```No```"
+                )
+            }
+        ]
+
+        response = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=0.0
+        )
+
+        answer_text = response.choices[0].message.content.strip()
+
+        logging.info(f'output for {table_str} and {query}: {answer_text}')
+
+        # Handle </think> tags
+        if "</think>" in answer_text:
+            answer_text = answer_text.split("</think>")[-1].strip()
+
+        match = re.search(r'```(.*?)```', answer_text, re.DOTALL)
+        if match:
+            answer_text = match.group(1).strip()
+
+        return "yes" in answer_text.lower()
+
+    results = []
+    for key, val in table_store.items():
+        try:
+            is_answerable = check_answerable(val["table_str"])
+            results.append((key, is_answerable))
+        except Exception as e:
+            logging.error(f"Error processing table {key}: {e}")
+            results.append((key, False))
+
+    answerable = [item for item in results if item[1]]
+    not_answerable = [item for item in results if not item[1]]
+    sorted_results = answerable + not_answerable
+
+    sorted_keys = [k for k, _ in sorted_results]
+    scores = [
+        (k, 1.0 if k in [x for x, _ in answerable] else 0.0)
+        for k in sorted_keys
+    ]
+
+    return scores[:topk]
+
+
+# ======================
+# Parallel evaluation at query level
+# ======================
 @torch.inference_mode()
-def evaluate(model_path, output_path, all_data, content_type, table_format, tables_path, key, url,
-             use_device=[1, 2], tables_json_path='tables.json', top_k=1):
-    tokenizer = AutoTokenizer.from_pretrained(
+def evaluate(
         model_path,
-        padding_side='left'
-    )
-    model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        device_map="cuda"
-    )
-    model.requires_grad_(False)
+        output_path,
+        all_data,
+        content_type,
+        table_format,
+        tables_path,
+        key,
+        url,
+        use_device=[1, 2],
+        tables_json_path='tables.json',
+        top_k=1
+):
+    max_workers=40
+    client = OpenAI(base_url=url, api_key=key)
+    os.makedirs(output_path, exist_ok=True)
 
     logging.info(f'output_path: {output_path}')
     logging.info(f'Loading tables.json: {tables_json_path}')
     logging.info('Load all tables at once, filter subset by sample when reranking')
 
-    # ===== Load all tables =====
     table_store_all = load_all_tables(
         tables_json_path,
         tables_path,
@@ -168,92 +229,88 @@ def evaluate(model_path, output_path, all_data, content_type, table_format, tabl
     )
 
     task_prompt = (
-        'Given a TableQA query, retrieve a relevant table that can answer the query. '
-        'Note that the retrieved table should contain sufficient information to provide an answer, '
-        'rather than resulting in an empty answer.'
+        'Given a table and a question, determine if the table provides '
+        'sufficient information to answer the question. You should not rely '
+        'solely on the schema; ensure that the content within the table can '
+        'actually address the question.'
     )
 
-    os.makedirs(output_path, exist_ok=True)
+    output_file = os.path.join(output_path, 'output.jsonl')
+    write_lock = Lock()
 
-    for index, conv in enumerate(tqdm.tqdm(all_data)):
+    def process_one_query(conv):
         try:
             query = conv[content_type]
 
-            # ===== Embedding retrieval results =====
             retrieved_by_embedding = str_to_list(conv["output_text"])
 
-            # ===== Filter subset from full table_store =====
             table_store_subset = {
                 k: table_store_all[k]
                 for k in retrieved_by_embedding
                 if k in table_store_all
             }
 
-            # ===== Rerank =====
             retrieved = rerank_topk_tables(
+                client=client,
                 query=query,
                 table_store=table_store_subset,
-                tokenizer=tokenizer,
-                model=model,
+                model=model_path,
                 task_prompt=task_prompt,
                 topk=top_k
             )
 
-            retrieved_keys_rerank = [k for k, _ in retrieved]
-            retrieved_scores_rerank = [score for _, score in retrieved]
+            retrieved_keys = [k for k, _ in retrieved]
+            retrieved_scores = [s for _, s in retrieved]
 
-            # ===== Evaluation =====
             gt_table_path = conv['highlighted_table'][0]
             db_id = conv['db_id']
 
             topk_success = []
             for k_idx in range(top_k):
                 success = 0
-                for key_ in retrieved_keys_rerank[:k_idx + 1]:
+                for key_ in retrieved_keys[:k_idx + 1]:
                     db, table_path = key_.split("::")
                     if db == db_id and table_path == gt_table_path:
                         success = 1
                         break
                 topk_success.append(success)
 
-            # ===== Output (rerank-specific fields) =====
             output_dict = {
                 **conv,
-                'output_text_rerank': str(retrieved_keys_rerank),
-                'top_k_similarities_rerank': retrieved_scores_rerank,
+                'output_text_rerank': str(retrieved_keys),
+                'top_k_similarities_rerank': retrieved_scores,
                 'tokens_rerank': 1
             }
 
             for k_idx in range(top_k):
                 output_dict[f'top_{k_idx + 1}_rerank'] = topk_success[k_idx]
 
-            with open(
-                    os.path.join(output_path, 'output.jsonl'),
-                    'a',
-                    encoding='utf-8'
-            ) as f:
-                f.write(json.dumps(output_dict, ensure_ascii=False) + '\n')
-
         except Exception:
-            error_message = traceback.format_exc()
-            logging.info(error_message)
-
+            logging.error(traceback.format_exc())
             output_dict = {
                 **conv,
                 'output_text_rerank': "error",
                 'tokens_rerank': 0,
                 'top_k_similarities_rerank': [0] * top_k
             }
-
             for k_idx in range(top_k):
                 output_dict[f'top_{k_idx + 1}_rerank'] = 0
 
-            with open(
-                    os.path.join(output_path, 'output.jsonl'),
-                    'a',
-                    encoding='utf-8'
-            ) as f:
+        with write_lock:
+            with open(output_file, 'a', encoding='utf-8') as f:
                 f.write(json.dumps(output_dict, ensure_ascii=False) + '\n')
+
+    # ======================
+    # Parallel processing at query level
+    # ======================
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [
+            executor.submit(process_one_query, conv)
+            for conv in all_data
+        ]
+
+        for _ in tqdm.tqdm(as_completed(futures), total=len(futures)):
+            pass
 
 def save_csv(data, path):
     if len(data) == 0:
@@ -325,7 +382,7 @@ def evaluate_all(model_path, json_path, output_path, num_gpus_total, num_gpus_pe
 def validate_content_type(value):
     valid_values = ['question', 'question_template', 'question_sentence','markdown_table']
     if value not in valid_values:
-        return 'question'  # Invalid value falls back to default
+        return 'question'  # Invalid value defaults to default value
     return value
 
 def main():
